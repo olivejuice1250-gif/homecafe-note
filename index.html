@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -37,10 +38,19 @@
     }
     a { color: inherit; }
     .num { font-family: 'Baloo 2', 'Noto Sans KR', sans-serif; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
-    .no-scrollbar::-webkit-scrollbar { display: none; }
-    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
   </style>
 </head>
+
 <body class="min-h-screen pb-32">
   <div class="mx-auto max-w-[560px] px-4 pt-4">
 
@@ -65,7 +75,7 @@
     </div>
 
     <!-- Monetized Coupang Direct Search Bar -->
-    <section class="mt-3">
+    <section class="mt-4">
       <form onsubmit="handleCoupangSearch(event)" class="relative flex items-center">
         <i data-lucide="search" class="w-4 h-4 absolute left-3.5 text-[var(--muted)]"></i>
         <input 
@@ -136,7 +146,14 @@
               <div class="inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-black tracking-tight text-[#1E1B1E]">
                 <i data-lucide="flame" class="w-3.5 h-3.5 text-[#FF2E7E]"></i> PICK 1
               </div>
-              <div class="mt-4 text-[62px] leading-none drop-shadow-[0_10px_18px_rgba(0,0,0,0.12)]">🔥</div>
+              <div class="mt-3 w-28 h-28 rounded-2xl overflow-hidden bg-white/90 p-1.5 shadow-md flex items-center justify-center">
+                <img 
+                  src="https://thumbnail5.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/2026/07/22/16/7/495e7891-2832-4f0c-93d5-df84e707d3e2.jpg" 
+                  referrerpolicy="no-referrer" 
+                  alt="해피데이 포켓용 대용량 핫팩 150g" 
+                  class="w-full h-full object-contain rounded-xl"
+                >
+              </div>
               <div class="mt-3 flex items-center gap-1.5 text-[12px] font-bold text-[#263238]">
                 <i data-lucide="truck" class="w-3.5 h-3.5"></i> 오늘 주문 · 빠른 배송
               </div>
@@ -213,7 +230,14 @@
               <div class="inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-black tracking-tight text-[#1E1B1E]">
                 <i data-lucide="flame" class="w-3.5 h-3.5 text-[#FF2E7E]"></i> PICK 2
               </div>
-              <div class="mt-4 text-[62px] leading-none drop-shadow-[0_10px_18px_rgba(0,0,0,0.12)]">🧴</div>
+              <div class="mt-3 w-28 h-28 rounded-2xl overflow-hidden bg-white/90 p-1.5 shadow-md flex items-center justify-center">
+                <img 
+                  src="https://thumbnail.coupangcdn.com/thumbnails/remote/640x640ex/image/retail/images/1748071329574296-d5f9dd2a-4715-402d-9104-0c735415d252.jpg" 
+                  referrerpolicy="no-referrer" 
+                  alt="부케가르니 핸드크림 4종 케어세트" 
+                  class="w-full h-full object-contain rounded-xl"
+                >
+              </div>
               <div class="mt-3 flex items-center gap-1.5 text-[12px] font-bold text-[#263238]">
                 <i data-lucide="truck" class="w-3.5 h-3.5"></i> 오늘 주문 · 빠른 배송
               </div>
@@ -290,7 +314,14 @@
               <div class="inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-black tracking-tight text-[#1E1B1E]">
                 <i data-lucide="flame" class="w-3.5 h-3.5 text-[#FF2E7E]"></i> PICK 3
               </div>
-              <div class="mt-4 text-[62px] leading-none drop-shadow-[0_10px_18px_rgba(0,0,0,0.12)]">🍎</div>
+              <div class="mt-3 w-28 h-28 rounded-2xl overflow-hidden bg-white/90 p-1.5 shadow-md flex items-center justify-center">
+                <img 
+                  src="https://thumbnail6.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/2020/07/07/11/7/8381dd00-cf7f-4b08-8fec-02421379f8c6.jpg" 
+                  referrerpolicy="no-referrer" 
+                  alt="고당도선별 곰곰 세척사과 2kg" 
+                  class="w-full h-full object-contain rounded-xl"
+                >
+              </div>
               <div class="mt-3 flex items-center gap-1.5 text-[12px] font-bold text-[#263238]">
                 <i data-lucide="truck" class="w-3.5 h-3.5"></i> 신선 · 빠른 배송
               </div>
@@ -381,7 +412,9 @@
       </div>
 
       <!-- Archive Item Container -->
-      <div id="archiveContainer" class="mt-4 space-y-3"></div>
+      <div id="archiveContainer" class="mt-4 space-y-3">
+        <!-- Rendered dynamically by script -->
+      </div>
 
       <p class="mt-4 flex items-center justify-center gap-1.5 rounded-2xl bg-[var(--surface)] px-3 py-3 text-center text-[12px] font-bold text-[var(--muted)]">
         <i data-lucide="clock-3" class="w-3.5 h-3.5 text-[var(--pink)]"></i> 매일 밤 12시 새로운 3개가 업데이트됩니다.
@@ -428,6 +461,7 @@
   </div>
 
   <script>
+    // Initialize Lucide icons
     lucide.createIcons();
 
     // Accordion Toggle function
@@ -444,16 +478,17 @@
     }
 
     // Countdown Timer
+    // 1. Midnight Countdown Timer
     function updateCountdown() {
       const now = new Date();
       const midnight = new Date(now);
       midnight.setHours(24, 0, 0, 0);
       const diff = Math.max(0, midnight - now);
-      
+
       const h = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
       const m = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
       const s = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
-      
+
       const timerEl = document.getElementById('countdownTimer');
       if (timerEl) timerEl.textContent = `${h}:${m}:${s}`;
     }
@@ -461,15 +496,18 @@
     updateCountdown();
 
     // Coupang Direct Search
+    // 2. Direct Coupang Search Redirection (Monetized Affiliate Search Link)
     function handleCoupangSearch(e) {
       e.preventDefault();
       const query = document.getElementById('coupangSearchInput').value.trim();
       if (!query) return;
+      // Direct Coupang search URL with affiliate partner tag
       const searchUrl = `https://www.coupang.com/np/search?component=&q=${encodeURIComponent(query)}&channel=user&lptag=AF6458244`;
       window.open(searchUrl, '_blank');
     }
 
     // Archive Database (3 items per date)
+    // 3. Daily Curated Archive Database (11/23, 11/22, 11/11, 11/10 - 3 items each)
     const archiveData = {
       "11/23": [
         {
@@ -602,6 +640,7 @@
     };
 
     function selectDate(dateKey) {
+      // Update tab UI
       document.querySelectorAll('.date-tab').forEach(tab => {
         if (tab.dataset.date === dateKey) {
           tab.className = "date-tab flex shrink-0 items-center gap-1.5 rounded-full px-4 py-2.5 text-[13px] font-black bg-[var(--pink)] text-white shadow-[0_8px_18px_rgba(255,46,126,0.28)]";
@@ -612,9 +651,10 @@
         }
       });
 
+      // Render items
       const container = document.getElementById('archiveContainer');
       const items = archiveData[dateKey] || [];
-      
+
       container.innerHTML = items.map(item => `
         <article class="overflow-hidden rounded-[24px] border border-[var(--line)] bg-[var(--surface)] shadow-[0_10px_28px_rgba(232,30,107,0.07)]">
           <div class="flex gap-3 p-4">
@@ -642,7 +682,9 @@
       lucide.createIcons();
     }
 
+    // Default to 11/23
     selectDate('11/23');
   </script>
 </body>
+
 </html>
