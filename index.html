@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>PICKGLOW FINDS & 홈카페 노트 | 공식 큐레이션 매거진</title>
+  <!-- Tailwind CSS & Lucide Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <style>
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      background-color: #F8F9FA;
+      color: #1A1D20;
+      -webkit-font-smoothing: antialiased;
+    }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .white-card {
+      background: #FFFFFF;
+      border: 1px solid #E9ECEF;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+    .hero-clean-glow {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255, 46, 126, 0.06) 0%, rgba(255, 184, 107, 0.04) 50%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body class="min-h-screen pb-36 relative">
+  <div class="hero-clean-glow top-0 right-0"></div>
+  <div class="hero-clean-glow top-96 left-0"></div>
+
+  <div class="max-w-[480px] mx-auto min-h-screen relative z-10 px-4 pt-6">
+
+    <!-- Top Navigation / Brand Header -->
+    <header class="flex items-center justify-between pb-3 border-b border-gray-200">
+      <div class="flex items-center gap-2.5">
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-[#FF2E7E] via-[#FF6B6B] to-[#FFA07A] flex items-center justify-center font-black text-white text-base shadow-md shadow-pink-500/20">
+          PG
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="text-[11px] font-black tracking-wider uppercase text-pink-600">CURATED EDITORIAL</span>
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          </div>
+          <h1 class="text-base font-black tracking-tight text-gray-900 flex items-center gap-1">
+            PICKGLOW FINDS <span class="text-[10px] px-1.5 py-0.5 rounded bg-gray-100 text-gray-600 font-bold border border-gray-200">Official</span>
+          </h1>
+        </div>
+      </div>
+      <div class="text-right">
+        <span class="text-[10px] font-bold text-gray-400 block">오늘 자정 마감까지</span>
+        <div id="countdownTimer" class="text-sm font-black text-red-500 tracking-wider font-mono">03:32:10</div>
+      </div>
+    </header>
+
+    <!-- Master Switcher: [오늘 밤 특가 3 PICK]  <->  [☕ 홈카페 노트 21선] -->
+    <div class="mt-3 p-1.5 bg-gray-100/90 rounded-2xl flex items-center border border-gray-200 shadow-sm">
+      <button class="flex-1 py-2.5 rounded-xl text-xs font-black text-gray-900 bg-white shadow-sm transition-all flex items-center justify-center gap-1.5">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-pink-500"></i>
+        <span>🔥 오늘 밤 특가 3 PICK</span>
+      </button>
+      <a href="homecafe.html" class="flex-1 py-2.5 rounded-xl text-xs font-black text-gray-600 hover:text-gray-900 transition-all flex items-center justify-center gap-1.5">
+        <i data-lucide="coffee" class="w-3.5 h-3.5 text-amber-600"></i>
+        <span>☕ 홈카페 노트 (21선)</span>
+      </a>
+    </div>
+
+    <!-- Coupang Search Box (Clean White Monetized Search) -->
+    <section class="mt-3">
+      <form onsubmit="handleCoupangSearch(event)" class="relative flex items-center">
+        <i data-lucide="search" class="w-5 h-5 absolute left-3.5 text-gray-400"></i>
+        <input 
+          type="text" 
+          id="coupangSearchInput" 
+          placeholder="쿠팡 최저가 & 로켓배송 상품 검색" 
+          class="w-full bg-white border border-gray-200 rounded-2xl py-3 pl-11 pr-24 text-sm font-medium text-gray-900 placeholder-gray-400 focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/10 transition-all shadow-sm"
+        />
+        <button 
+          type="submit" 
+          class="absolute right-2 px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-pink-500 to-rose-500 text-white text-xs font-black hover:opacity-95 active:scale-95 transition-all shadow-sm"
+        >
+          쿠팡 검색
+        </button>
+      </form>
+      <p class="text-[11px] text-gray-500 mt-1.5 px-1 flex items-center gap-1">
+        <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-500"></i>
+        <span>검색창을 통해 구매하셔도 파트너스 최저가 혜택이 적용됩니다.</span>
+      </p>
+    </section>
+
+    <!-- Magazine Editorial Intro Card -->
+    <section class="mt-4 white-card rounded-3xl p-5 relative overflow-hidden bg-gradient-to-br from-white via-pink-50/30 to-amber-50/20">
+      <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-pink-50 border border-pink-200 text-pink-600 text-xs font-black">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> 오늘의 엄선 3 PICK
+      </div>
+      <h2 class="text-xl font-black text-gray-900 mt-2.5 leading-snug">
+        이 밤에 안 사면<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-500">내일 아침 후회하는 3가지</span>
+      </h2>
+      <p class="text-xs text-gray-500 mt-1.5 leading-relaxed font-medium">
+        에디터가 직접 가격 추이와 후기 1만개 이상을 검증하여 선별한 자정 마감 특가 리스트입니다.
+      </p>
+    </section>
+
+    <!-- Today's Top 3 Magazine Cards -->
+    <section class="mt-4 space-y-4">
+
+      <!-- ITEM 1: 해피데이 핫팩 150g -->
+      <article class="white-card rounded-[28px] overflow-hidden hover:border-pink-300 transition-all duration-300 group shadow-sm hover:shadow-md">
+        <div class="p-5 pb-4 bg-gradient-to-br from-orange-50/40 via-white to-white">
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-full bg-red-50 border border-red-200 text-red-600 text-xs font-black flex items-center gap-1">
+              <i data-lucide="flame" class="w-3.5 h-3.5"></i> PICK 1 · 오늘 -80% 대란
+            </span>
+            <span class="text-xs font-extrabold text-amber-600 flex items-center gap-1">
+              ★ 4.8 <span class="text-gray-400 text-[11px] font-normal">(후기 14만+)</span>
+            </span>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div class="w-24 h-24 rounded-2xl bg-gradient-to-tr from-amber-100 to-orange-50 border border-orange-100 flex items-center justify-center text-4xl shadow-sm shrink-0">
+              🔥
+            </div>
+            <div class="min-w-0">
+              <h3 class="text-base font-black text-gray-900 leading-tight truncate">해피데이 포켓용 대용량 핫팩</h3>
+              <p class="text-xs text-gray-500 mt-1 line-clamp-2">하루 종일 끄떡없는 150g 특대용량. 출근길·등굣길 혹한기 필수 쟁여템</p>
+              <div class="mt-2 flex items-baseline gap-2">
+                <span class="text-xs text-gray-400 line-through">29,470원</span>
+                <span class="text-lg font-black text-red-600">5,900원</span>
+                <span class="text-xs font-black px-1.5 py-0.5 rounded bg-red-500 text-white">-80%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 pt-3 bg-gray-50 flex items-center justify-between border-t border-gray-100">
+          <span class="text-[11px] text-gray-500 font-medium flex items-center gap-1">
+            <i data-lucide="truck" class="w-3.5 h-3.5 text-blue-500"></i> 내일 아침 도착 로켓배송
+          </span>
+          <a 
+            href="https://link.coupang.com/a/iWhKN1IORw" 
+            target="_blank" 
+            rel="noopener"
+            class="px-4 py-2 rounded-xl bg-gradient-to-r from-red-500 to-pink-500 text-white text-xs font-black flex items-center gap-1.5 hover:shadow-md hover:shadow-red-500/20 active:scale-95 transition-all"
+          >
+            <span>특가 확인하기</span>
+            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- ITEM 2: 부케가르니 핸드크림 4종 -->
+      <article class="white-card rounded-[28px] overflow-hidden hover:border-pink-300 transition-all duration-300 group shadow-sm hover:shadow-md">
+        <div class="p-5 pb-4 bg-gradient-to-br from-pink-50/40 via-white to-white">
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-full bg-pink-50 border border-pink-200 text-pink-600 text-xs font-black flex items-center gap-1">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> PICK 2 · 75% 파격할인
+            </span>
+            <span class="text-xs font-extrabold text-amber-600 flex items-center gap-1">
+              ★ 4.8 <span class="text-gray-400 text-[11px] font-normal">(선물 1위)</span>
+            </span>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div class="w-24 h-24 rounded-2xl bg-gradient-to-tr from-pink-100 to-rose-50 border border-pink-100 flex items-center justify-center text-4xl shadow-sm shrink-0">
+              🧴
+            </div>
+            <div class="min-w-0">
+              <h3 class="text-base font-black text-gray-900 leading-tight truncate">부케가르니 핸드크림 4종 세트</h3>
+              <p class="text-xs text-gray-500 mt-1 line-clamp-2">향수 뿌린 듯 은은하고 오래가는 시그니처 4종. 끈적임 없는 고보습 케어</p>
+              <div class="mt-2 flex items-baseline gap-2">
+                <span class="text-xs text-gray-400 line-through">31,600원</span>
+                <span class="text-lg font-black text-pink-600">9,900원</span>
+                <span class="text-xs font-black px-1.5 py-0.5 rounded bg-pink-500 text-white">-75%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 pt-3 bg-gray-50 flex items-center justify-between border-t border-gray-100">
+          <span class="text-[11px] text-gray-500 font-medium flex items-center gap-1">
+            <i data-lucide="gift" class="w-3.5 h-3.5 text-purple-500"></i> 고급 패키지 박스 포장
+          </span>
+          <a 
+            href="https://link.coupang.com/a/iWhP8OEwSW" 
+            target="_blank" 
+            rel="noopener"
+            class="px-4 py-2 rounded-xl bg-gradient-to-r from-pink-500 to-rose-500 text-white text-xs font-black flex items-center gap-1.5 hover:shadow-md hover:shadow-pink-500/20 active:scale-95 transition-all"
+          >
+            <span>특가 확인하기</span>
+            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- ITEM 3: 고당도 세척사과 2kg -->
+      <article class="white-card rounded-[28px] overflow-hidden hover:border-pink-300 transition-all duration-300 group shadow-sm hover:shadow-md">
+        <div class="p-5 pb-4 bg-gradient-to-br from-emerald-50/40 via-white to-white">
+          <div class="flex items-center justify-between mb-3">
+            <span class="px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-600 text-xs font-black flex items-center gap-1">
+              <i data-lucide="apple" class="w-3.5 h-3.5"></i> PICK 3 · 껍질째 아삭
+            </span>
+            <span class="text-xs font-extrabold text-amber-600 flex items-center gap-1">
+              ★ 4.9 <span class="text-gray-400 text-[11px] font-normal">(후기 19만)</span>
+            </span>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div class="w-24 h-24 rounded-2xl bg-gradient-to-tr from-emerald-100 to-green-50 border border-emerald-100 flex items-center justify-center text-4xl shadow-sm shrink-0">
+              🍎
+            </div>
+            <div class="min-w-0">
+              <h3 class="text-base font-black text-gray-900 leading-tight truncate">고당도선별 곰곰 세척사과 2kg</h3>
+              <p class="text-xs text-gray-500 mt-1 line-clamp-2">안 씻고 바로 먹는 청결 세척. 당도 보증 선별로 꿀이 꽉 찬 특품</p>
+              <div class="mt-2 flex items-baseline gap-2">
+                <span class="text-lg font-black text-emerald-600">10,900원</span>
+                <span class="text-xs font-black px-1.5 py-0.5 rounded bg-emerald-500 text-white">오늘특가</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 pt-3 bg-gray-50 flex items-center justify-between border-t border-gray-100">
+          <span class="text-[11px] text-gray-500 font-medium flex items-center gap-1">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-500"></i> 당도 보증 프레시 배송
+          </span>
+          <a 
+            href="https://link.coupang.com/a/iWhWSnA7eC" 
+            target="_blank" 
+            rel="noopener"
+            class="px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-xs font-black flex items-center gap-1.5 hover:shadow-md hover:shadow-emerald-500/20 active:scale-95 transition-all"
+          >
+            <span>특가 확인하기</span>
+            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Past Daily Editions: 11/23, 11/22, 11/11, 11/10 Archive -->
+    <section class="mt-8">
+      <div class="flex items-center justify-between mb-3">
+        <div>
+          <span class="text-[11px] font-black text-pink-600 uppercase tracking-wider block">PREVIOUS ARCHIVE</span>
+          <h2 class="text-lg font-black text-gray-900">지난 에디션 아카이브</h2>
+        </div>
+        <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-gray-100 text-gray-600 border border-gray-200">날짜별 3개 엄선</span>
+      </div>
+
+      <!-- Date Tab Selector -->
+      <div class="flex gap-2 overflow-x-auto no-scrollbar py-2" id="dateTabs">
+        <button onclick="selectDate('11/23')" class="date-tab px-4 py-2 rounded-2xl text-xs font-black bg-pink-500 text-white shadow-sm shrink-0 transition-all" data-date="11/23">
+          11/23 (어제)
+        </button>
+        <button onclick="selectDate('11/22')" class="date-tab px-4 py-2 rounded-2xl text-xs font-black bg-white text-gray-500 border border-gray-200 hover:text-gray-900 shrink-0 transition-all shadow-sm" data-date="11/22">
+          11/22 특가
+        </button>
+        <button onclick="selectDate('11/11')" class="date-tab px-4 py-2 rounded-2xl text-xs font-black bg-white text-gray-500 border border-gray-200 hover:text-gray-900 shrink-0 transition-all shadow-sm" data-date="11/11">
+          11/11 대란
+        </button>
+        <button onclick="selectDate('11/10')" class="date-tab px-4 py-2 rounded-2xl text-xs font-black bg-white text-gray-500 border border-gray-200 hover:text-gray-900 shrink-0 transition-all shadow-sm" data-date="11/10">
+          11/10 오픈
+        </button>
+      </div>
+
+      <!-- Archive Item Container -->
+      <div id="archiveContainer" class="mt-4 space-y-3"></div>
+    </section>
+
+    <!-- Magazine Editorial Footnote & FTC Legal Disclaimer -->
+    <footer class="mt-12 text-center text-gray-500 text-xs pb-10 border-t border-gray-200 pt-6">
+      <p class="font-bold text-gray-700">PICKGLOW FINDS & 홈카페 노트 · 매일 자정 새로운 큐레이션</p>
+      <p class="text-[11px] text-gray-400 mt-1.5 leading-relaxed">
+        본 페이지는 쿠팡 파트너스 활동의 일환으로, 구매 시 이에 따른 일정액의 수수료를 제공받아 서비스 운영에 사용됩니다.
+      </p>
+      <p class="text-[10px] text-gray-400 mt-2">© 2026 Pickglow. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    function updateCountdown() {
+      const now = new Date();
+      const midnight = new Date(now);
+      midnight.setHours(24, 0, 0, 0);
+      const diff = Math.max(0, midnight - now);
+      
+      const h = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
+      const m = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+      const s = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+      
+      const timerEl = document.getElementById('countdownTimer');
+      if (timerEl) timerEl.textContent = `${h}:${m}:${s}`;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    function handleCoupangSearch(e) {
+      e.preventDefault();
+      const query = document.getElementById('coupangSearchInput').value.trim();
+      if (!query) return;
+      const searchUrl = `https://www.coupang.com/np/search?component=&q=${encodeURIComponent(query)}&channel=user&lptag=AF6458244`;
+      window.open(searchUrl, '_blank');
+    }
+
+    const archiveData = {
+      "11/23": [
+        {
+          emoji: "🥩",
+          name: "파파네정육점 통삼겹살 (수육·구이용 2kg)",
+          sub: "신선하고 도톰한 특급 육질 · 1kg당 9천원대 대란",
+          price: "19,800원",
+          badge: "-42% 특가",
+          tag: "정육 1위",
+          link: "https://www.coupang.com/np/search?q=파파네정육점+통삼겹살&lptag=AF6458244"
+        },
+        {
+          emoji: "✨",
+          name: "에그 갈바닉 마사지기 홈케어 뷰티디바이스",
+          sub: "피부과 갈 필요 없는 갈바닉 미세전류 탄력 케어",
+          price: "24,900원",
+          badge: "-55% 특가",
+          tag: "뷰티 1위",
+          link: "https://www.coupang.com/np/search?q=갈바닉+마사지기&lptag=AF6458244"
+        },
+        {
+          emoji: "💧",
+          name: "바세린 오리지널 프로텍팅 젤리 100ml 3개",
+          sub: "건조한 겨울철 국민 보습 끝판왕 가성비 세트",
+          price: "8,900원",
+          badge: "가성비종결",
+          tag: "보습 1위",
+          link: "https://www.coupang.com/np/search?q=바세린+오리지널&lptag=AF6458244"
+        }
+      ],
+      "11/22": [
+        {
+          emoji: "🍗",
+          name: "야키토리 토리야 닭꼬치 모둠세트 (에프 전용)",
+          sub: "14만 리뷰 신화! 숯불향 가득 이자카야 맛 10분 컷",
+          price: "16,800원",
+          badge: "-62% 특가",
+          tag: "야식 1위",
+          link: "https://www.coupang.com/np/search?q=토리야+닭꼬치&lptag=AF6458244"
+        },
+        {
+          emoji: "🥚",
+          name: "대한민국농수산 구운계란 60구 대용량",
+          sub: "목막힘 없이 촉촉하고 쫄깃한 간식 끝판왕",
+          price: "15,800원",
+          badge: "단독특가",
+          tag: "간식 1위",
+          link: "https://www.coupang.com/np/search?q=구운계란+60구&lptag=AF6458244"
+        },
+        {
+          emoji: "🚗",
+          name: "불스원 레인OK 이지그립 유막제거 & 발수코팅",
+          sub: "비 오는 날 시야 5분 컷! 장마·겨울철 필수 차량용품",
+          price: "12,900원",
+          badge: "-38% 할인",
+          tag: "차량 1위",
+          link: "https://www.coupang.com/np/search?q=불스원+레인OK&lptag=AF6458244"
+        }
+      ],
+      "11/11": [
+        {
+          emoji: "🍫",
+          name: "기라델리 프리미엄 72% 카카오 다크 초콜릿",
+          sub: "샌프란시스코 정통 딥 카카오 · 커피와 환상 페어링",
+          price: "15,370원",
+          badge: "-27% 세일",
+          tag: "디저트 1위",
+          link: "https://www.coupang.com/np/search?q=기라델리+72&lptag=AF6458244"
+        },
+        {
+          emoji: "☕",
+          name: "네스프레소 에센자 미니 C30 캡슐머신",
+          sub: "공간 차지 없는 콤팩트 홈카페 스테디셀러",
+          price: "126,690원",
+          badge: "-21% 세일",
+          tag: "가전 1위",
+          link: "https://www.coupang.com/np/search?q=네스프레소+에센자미니&lptag=AF6458244"
+        },
+        {
+          emoji: "🐚",
+          name: "길리안 시쉘 벨기에 초콜릿 250g",
+          sub: "헤이즐넛 프랄린과 마블 초콜릿의 부드러운 조화",
+          price: "11,380원",
+          badge: "-31% 세일",
+          tag: "인기선물",
+          link: "https://www.coupang.com/np/search?q=길리안+시쉘&lptag=AF6458244"
+        }
+      ],
+      "11/10": [
+        {
+          emoji: "🧹",
+          name: "바이칸 위생 테이블솔 & 틈새 줄눈 청소솔",
+          sub: "인스타 릴스 대란템! 욕실 물때 1분 박멸 살림 필수템",
+          price: "8,900원",
+          badge: "살림꿀템",
+          tag: "살림 1위",
+          link: "https://www.coupang.com/np/search?q=바이칸+청소솔&lptag=AF6458244"
+        },
+        {
+          emoji: "🧘",
+          name: "멜킨 프리미엄 TPE 6mm 홈트 요가매트",
+          sub: "아파트 층간소음 방지 & 밀림 없는 논슬립 고밀도",
+          price: "17,800원",
+          badge: "-48% 반값",
+          tag: "운동 1위",
+          link: "https://www.coupang.com/np/search?q=멜킨+요가매트&lptag=AF6458244"
+        },
+        {
+          emoji: "🌶️",
+          name: "박미란 명장의 홍담 100% 국산 김치양념 4kg",
+          sub: "배추 8포기 뚝딱! 1포기당 4천원 꼴 80% 파격 대란",
+          price: "34,900원",
+          badge: "-80% 파격",
+          tag: "김장 1위",
+          link: "https://www.coupang.com/np/search?q=박미란+김치양념&lptag=AF6458244"
+        }
+      ]
+    };
+
+    function selectDate(dateKey) {
+      document.querySelectorAll('.date-tab').forEach(tab => {
+        if (tab.dataset.date === dateKey) {
+          tab.className = "date-tab px-4 py-2 rounded-2xl text-xs font-black bg-pink-500 text-white shadow-sm shrink-0 transition-all";
+        } else {
+          tab.className = "date-tab px-4 py-2 rounded-2xl text-xs font-black bg-white text-gray-500 border border-gray-200 hover:text-gray-900 shrink-0 transition-all shadow-sm";
+        }
+      });
+
+      const container = document.getElementById('archiveContainer');
+      const items = archiveData[dateKey] || [];
+      
+      container.innerHTML = items.map(item => `
+        <div class="white-card rounded-2xl p-4 flex items-center justify-between hover:border-pink-300 transition-all shadow-sm">
+          <div class="flex items-center gap-3.5 min-w-0 pr-3">
+            <div class="w-12 h-12 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center text-2xl shrink-0 shadow-sm">
+              ${item.emoji}
+            </div>
+            <div class="min-w-0">
+              <div class="flex items-center gap-1.5">
+                <span class="text-[10px] font-black px-1.5 py-0.5 rounded bg-pink-50 text-pink-600 border border-pink-100">${item.tag}</span>
+                <span class="text-xs font-black text-gray-900 truncate">${item.name}</span>
+              </div>
+              <p class="text-[11px] text-gray-500 truncate mt-0.5">${item.sub}</p>
+              <div class="flex items-baseline gap-1.5 mt-1">
+                <span class="text-sm font-black text-gray-900">${item.price}</span>
+                <span class="text-[10px] font-bold text-red-500">${item.badge}</span>
+              </div>
+            </div>
+          </div>
+          <a 
+            href="${item.link}" 
+            target="_blank" 
+            rel="noopener"
+            class="px-3 py-1.5 rounded-xl bg-gray-100 hover:bg-pink-500 hover:text-white text-gray-700 text-xs font-bold shrink-0 transition-all flex items-center gap-1"
+          >
+            <span>보기</span>
+            <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+      `).join('');
+
+      lucide.createIcons();
+    }
+
+    selectDate('11/23');
+  </script>
+</body>
+</html>
