@@ -80,7 +80,7 @@
         class="inline-flex items-center gap-1.5 rounded-full border border-[var(--line)] bg-[var(--surface)] px-3 py-1 font-black text-[var(--pink-deep)] shadow-sm">
         <i data-lucide="sparkles" class="w-3.5 h-3.5 text-pink-500"></i> @pickglowfinds
       </span>
-      <span class="text-[12px]">매일 오늘만 특가 3개만 · 오늘 자정 마감</span>
+      <span class="text-[12px]">매일 오늘만 특가 3개만 · 아침 7시 마감</span>
     </header>
 
     <!-- Master Switcher: [🔥 오늘만 특가 3 PICK]  <->  [☕ 홈카페 노트 (21선)] -->
@@ -129,7 +129,7 @@
         오늘만 특가 <span class="text-[var(--pink)]">3 PICK</span>
       </h1>
       <p class="mt-1 text-[13px] font-bold text-[var(--muted)]">
-        고민할 시간 없이 딱 3개만. 오늘 자정 지나면 가격이 바뀌어요.
+        고민할 시간 없이 딱 3개만. 매일 아침 7시가 지나면 가격이 바뀌어요.
       </p>
 
       <div class="mt-4 flex flex-wrap gap-2 text-[12px] font-bold text-[#42383E]">
@@ -503,12 +503,15 @@
     }
 
     // Countdown Timer
-    // 1. Midnight Countdown Timer
+    // 1. Coupang 07:00 AM Cycle Countdown Timer
     function updateCountdown() {
       const now = new Date();
-      const midnight = new Date(now);
-      midnight.setHours(24, 0, 0, 0);
-      const diff = Math.max(0, midnight - now);
+      const target = new Date(now);
+      if (now.getHours() >= 7) {
+        target.setDate(target.getDate() + 1);
+      }
+      target.setHours(7, 0, 0, 0);
+      const diff = Math.max(0, target - now);
 
       const h = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
       const m = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
