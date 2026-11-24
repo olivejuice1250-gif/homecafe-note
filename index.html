@@ -8,7 +8,9 @@
   <!-- Google Fonts: Noto Sans KR & Baloo 2 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&family=Baloo+2:wght@700;800&display=swap"
+    rel="stylesheet">
   <!-- Tailwind CSS & Lucide Icons -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -27,8 +29,15 @@
       --yellow: #FFC93C;
       --coupang: #FF2E7E;
     }
-    * { box-sizing: border-box; }
-    html { background: var(--bg); }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--bg);
+    }
+
     body {
       margin: 0;
       font-family: 'Noto Sans KR', system-ui, -apple-system, sans-serif;
@@ -36,8 +45,16 @@
       color: var(--ink);
       -webkit-font-smoothing: antialiased;
     }
-    a { color: inherit; }
-    .num { font-family: 'Baloo 2', 'Noto Sans KR', sans-serif; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+
+    a {
+      color: inherit;
+    }
+
+    .num {
+      font-family: 'Baloo 2', 'Noto Sans KR', sans-serif;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.02em;
+    }
 
     .no-scrollbar::-webkit-scrollbar {
       display: none;
@@ -47,7 +64,6 @@
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
-
   </style>
 </head>
 
@@ -56,7 +72,8 @@
 
     <!-- Top Account Banner -->
     <header class="flex items-center justify-between py-2 text-[13px] font-bold text-[var(--muted)]">
-      <span class="inline-flex items-center gap-1.5 rounded-full border border-[var(--line)] bg-[var(--surface)] px-3 py-1 font-black text-[var(--pink-deep)] shadow-sm">
+      <span
+        class="inline-flex items-center gap-1.5 rounded-full border border-[var(--line)] bg-[var(--surface)] px-3 py-1 font-black text-[var(--pink-deep)] shadow-sm">
         <i data-lucide="sparkles" class="w-3.5 h-3.5 text-pink-500"></i> @pickglowfinds
       </span>
       <span class="text-[12px]">매일 오늘만 특가 3개만 · 오늘 자정 마감</span>
@@ -64,11 +81,13 @@
 
     <!-- Master Switcher: [🔥 오늘만 특가 3 PICK]  <->  [☕ 홈카페 노트 (21선)] -->
     <div class="mt-2.5 p-1 bg-[var(--surface-2)] rounded-2xl flex items-center border border-[var(--line)]">
-      <button class="flex-1 py-2 rounded-xl text-xs font-black text-white bg-[var(--pink)] shadow-sm flex items-center justify-center gap-1.5 transition-all">
+      <button
+        class="flex-1 py-2 rounded-xl text-xs font-black text-white bg-[var(--pink)] shadow-sm flex items-center justify-center gap-1.5 transition-all">
         <i data-lucide="flame" class="w-3.5 h-3.5"></i>
         <span>오늘만 특가 3 PICK</span>
       </button>
-      <a href="homecafe.html" class="flex-1 py-2 rounded-xl text-xs font-black text-[var(--muted)] hover:text-[var(--ink)] flex items-center justify-center gap-1.5 transition-all">
+      <a href="homecafe.html"
+        class="flex-1 py-2 rounded-xl text-xs font-black text-[var(--muted)] hover:text-[var(--ink)] flex items-center justify-center gap-1.5 transition-all">
         <i data-lucide="coffee" class="w-3.5 h-3.5 text-amber-600"></i>
         <span>☕ 홈카페 노트 (21선)</span>
       </a>
@@ -78,30 +97,27 @@
     <section class="mt-4">
       <form onsubmit="handleCoupangSearch(event)" class="relative flex items-center">
         <i data-lucide="search" class="w-4 h-4 absolute left-3.5 text-[var(--muted)]"></i>
-        <input 
-          type="text" 
-          id="coupangSearchInput" 
-          placeholder="쿠팡 최저가 & 로켓배송 상품 직접 검색" 
-          class="w-full bg-white border border-[var(--line)] rounded-2xl py-2.5 pl-10 pr-24 text-[13px] font-medium text-[var(--ink)] placeholder-[var(--muted)] focus:outline-none focus:border-[var(--pink)] focus:ring-1 focus:ring-[var(--pink)] transition-all shadow-sm"
-        />
-        <button 
-          type="submit" 
-          class="absolute right-1.5 px-3 py-1.5 rounded-xl bg-[var(--pink)] text-white text-[11px] font-black hover:opacity-95 active:scale-95 transition-all shadow-sm"
-        >
+        <input type="text" id="coupangSearchInput" placeholder="쿠팡 최저가 & 로켓배송 상품 직접 검색"
+          class="w-full bg-white border border-[var(--line)] rounded-2xl py-2.5 pl-10 pr-24 text-[13px] font-medium text-[var(--ink)] placeholder-[var(--muted)] focus:outline-none focus:border-[var(--pink)] focus:ring-1 focus:ring-[var(--pink)] transition-all shadow-sm" />
+        <button type="submit"
+          class="absolute right-1.5 px-3 py-1.5 rounded-xl bg-[var(--pink)] text-white text-[11px] font-black hover:opacity-95 active:scale-95 transition-all shadow-sm">
           쿠팡 검색
         </button>
       </form>
     </section>
 
     <!-- Hero Title & Savings Section -->
-    <section class="mt-4 rounded-[28px] border border-[var(--line)] bg-[var(--surface)] p-5 shadow-[0_12px_36px_rgba(255,46,126,0.08)]">
+    <section
+      class="mt-4 rounded-[28px] border border-[var(--line)] bg-[var(--surface)] p-5 shadow-[0_12px_36px_rgba(255,46,126,0.08)]">
       <div class="flex flex-wrap items-center justify-between gap-2">
-        <span class="inline-flex items-center gap-1 rounded-full bg-[var(--surface-2)] px-2.5 py-1 text-[11px] font-extrabold text-[var(--pink-deep)]">
+        <span
+          class="inline-flex items-center gap-1 rounded-full bg-[var(--surface-2)] px-2.5 py-1 text-[11px] font-extrabold text-[var(--pink-deep)]">
           <i data-lucide="clock-3" class="w-3.5 h-3.5"></i> 오늘의 PICK · 매일 업데이트
         </span>
         <div class="flex items-center gap-1.5 font-bold text-[13px]">
           <span class="text-[var(--muted)]">마감까지</span>
-          <span class="num rounded-lg bg-[#111111] px-2 py-0.5 text-[14px] font-extrabold text-white" id="countdownTimer">03:15:20</span>
+          <span class="num rounded-lg bg-[#111111] px-2 py-0.5 text-[14px] font-extrabold text-white"
+            id="countdownTimer">03:15:20</span>
         </div>
       </div>
 
@@ -113,13 +129,16 @@
       </p>
 
       <div class="mt-4 flex flex-wrap gap-2 text-[12px] font-bold text-[#42383E]">
-        <span class="inline-flex items-center gap-1 rounded-full border border-[var(--line)] bg-[var(--surface-2)] px-3 py-1">
+        <span
+          class="inline-flex items-center gap-1 rounded-full border border-[var(--line)] bg-[var(--surface-2)] px-3 py-1">
           <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-500"></i> 빠르게 골라요
         </span>
-        <span class="inline-flex items-center gap-1 rounded-full border border-[var(--line)] bg-[var(--surface-2)] px-3 py-1">
+        <span
+          class="inline-flex items-center gap-1 rounded-full border border-[var(--line)] bg-[var(--surface-2)] px-3 py-1">
           <i data-lucide="badge-check" class="w-3.5 h-3.5 text-pink-500"></i> 후기 검증
         </span>
-        <span class="inline-flex items-center gap-1 rounded-full border border-[var(--line)] bg-[var(--surface-2)] px-3 py-1">
+        <span
+          class="inline-flex items-center gap-1 rounded-full border border-[var(--line)] bg-[var(--surface-2)] px-3 py-1">
           <i data-lucide="calendar-days" class="w-3.5 h-3.5 text-blue-500"></i> 가격 비교 완료
         </span>
       </div>
@@ -133,17 +152,15 @@
     <main class="mt-5 space-y-4">
 
       <!-- PRODUCT 1: 해피데이 핫팩 150g -->
-      <article class="overflow-hidden rounded-[26px] border border-[var(--line)] bg-[var(--surface)] shadow-[0_16px_40px_rgba(232,30,107,0.09)]">
-        <a 
-          href="https://link.coupang.com/a/iWhKN1IORw" 
-          target="_blank" 
-          rel="noopener"
-          class="relative block overflow-hidden" 
-          style="background: linear-gradient(135deg,#FFE3B8 0%,#FFB86B 48%,#FFF2A8 100%)"
-        >
+      <article
+        class="overflow-hidden rounded-[26px] border border-[var(--line)] bg-[var(--surface)] shadow-[0_16px_40px_rgba(232,30,107,0.09)]">
+        <a href="https://link.coupang.com/a/iWhKN1IORw" target="_blank" rel="noopener"
+          class="relative block overflow-hidden"
+          style="background: linear-gradient(135deg,#FFE3B8 0%,#FFB86B 48%,#FFF2A8 100%)">
           <div class="relative flex min-h-[186px] items-center justify-between px-5 py-5">
             <div class="min-w-0">
-              <div class="inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-black tracking-tight text-[#1E1B1E]">
+              <div
+                class="inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-black tracking-tight text-[#1E1B1E]">
                 <i data-lucide="flame" class="w-3.5 h-3.5 text-[#FF2E7E]"></i> PICK 1
               </div>
               <div class="mt-3 w-28 h-28 rounded-2xl overflow-hidden bg-white/90 p-1.5 shadow-md flex items-center justify-center">
@@ -158,13 +175,15 @@
                 <i data-lucide="truck" class="w-3.5 h-3.5"></i> 오늘 주문 · 빠른 배송
               </div>
             </div>
-            <div class="shrink-0 self-start rounded-[20px] bg-[var(--pink)] px-3 py-3 text-center text-white shadow-[0_10px_24px_rgba(255,46,126,0.38)]">
+            <div
+              class="shrink-0 self-start rounded-[20px] bg-[var(--pink)] px-3 py-3 text-center text-white shadow-[0_10px_24px_rgba(255,46,126,0.38)]">
               <div class="text-[11px] font-extrabold">할인</div>
               <div class="num text-[32px] font-extrabold leading-none">-80%</div>
               <div class="mt-1 text-[10px] font-bold opacity-90">오늘만</div>
             </div>
           </div>
-          <span class="absolute bottom-3 right-3 inline-flex items-center gap-1 rounded-full bg-black/25 px-2 py-1 text-[10px] font-bold text-white backdrop-blur-sm">
+          <span
+            class="absolute bottom-3 right-3 inline-flex items-center gap-1 rounded-full bg-black/25 px-2 py-1 text-[10px] font-bold text-white backdrop-blur-sm">
             자세히 보기 <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
           </span>
         </a>
@@ -179,8 +198,10 @@
           </a>
 
           <div class="mt-3 flex flex-wrap items-center gap-2">
-            <span class="rounded-full bg-[var(--surface-2)] px-2.5 py-1 text-[12px] font-bold text-[#5C2E43]">추위 대비</span>
-            <span class="rounded-full bg-[var(--surface-2)] px-2.5 py-1 text-[12px] font-bold text-[#5C2E43]">대용량 150g</span>
+            <span class="rounded-full bg-[var(--surface-2)] px-2.5 py-1 text-[12px] font-bold text-[#5C2E43]">추위
+              대비</span>
+            <span class="rounded-full bg-[var(--surface-2)] px-2.5 py-1 text-[12px] font-bold text-[#5C2E43]">대용량
+              150g</span>
           </div>
 
           <div class="mt-4 flex items-center justify-between border-t border-dashed border-[var(--line)] pt-3">
@@ -192,24 +213,19 @@
           </div>
 
           <!-- Accordion Toggle -->
-          <button 
-            type="button" 
-            onclick="toggleAccordion('why1', this)"
-            class="mt-3 flex w-full items-center justify-between rounded-xl bg-[#F8F4F5] px-3 py-2.5 text-left text-[13px] font-bold text-[#553A48]"
-          >
-            <span class="flex items-center gap-1.5"><i data-lucide="sparkles" class="w-3.5 h-3.5 text-[var(--pink)]"></i> 왜 오늘의 PICK인가요?</span>
+          <button type="button" onclick="toggleAccordion('why1', this)"
+            class="mt-3 flex w-full items-center justify-between rounded-xl bg-[#F8F4F5] px-3 py-2.5 text-left text-[13px] font-bold text-[#553A48]">
+            <span class="flex items-center gap-1.5"><i data-lucide="sparkles"
+                class="w-3.5 h-3.5 text-[var(--pink)]"></i> 왜 오늘의 PICK인가요?</span>
             <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i>
           </button>
-          <p id="why1" class="hidden mt-2 rounded-xl bg-[var(--surface-2)] px-3 py-3 text-[13px] leading-6 text-[var(--muted)]">
+          <p id="why1"
+            class="hidden mt-2 rounded-xl bg-[var(--surface-2)] px-3 py-3 text-[13px] leading-6 text-[var(--muted)]">
             주머니에 쏙 들어가는 대용량 150g. 출근길, 등굣길, 야외 활동 전에 미리 챙겨두면 하루 종일 따뜻해요.
           </p>
 
-          <a 
-            href="https://link.coupang.com/a/iWhKN1IORw" 
-            target="_blank" 
-            rel="noopener"
-            class="mt-4 flex h-[52px] items-center justify-center gap-2 rounded-2xl bg-[var(--pink)] text-[16px] font-black text-white shadow-[0_10px_22px_rgba(255,46,126,0.28)] transition active:scale-[0.98]"
-          >
+          <a href="https://link.coupang.com/a/iWhKN1IORw" target="_blank" rel="noopener"
+            class="mt-4 flex h-[52px] items-center justify-center gap-2 rounded-2xl bg-[var(--pink)] text-[16px] font-black text-white shadow-[0_10px_22px_rgba(255,46,126,0.28)] transition active:scale-[0.98]">
             쿠팡에서 보기 <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
           </a>
           <p class="mt-2 text-center text-[11px] text-[var(--muted)]">버튼을 누르면 쿠팡 상품 페이지로 이동해요</p>
@@ -217,17 +233,15 @@
       </article>
 
       <!-- PRODUCT 2: 부케가르니 핸드크림 4종 -->
-      <article class="overflow-hidden rounded-[26px] border border-[var(--line)] bg-[var(--surface)] shadow-[0_16px_40px_rgba(232,30,107,0.09)]">
-        <a 
-          href="https://link.coupang.com/a/iWhP8OEwSW" 
-          target="_blank" 
-          rel="noopener"
-          class="relative block overflow-hidden" 
-          style="background: linear-gradient(135deg,#FFE0E6 0%,#FFC2CE 46%,#FFF0B8 100%)"
-        >
+      <article
+        class="overflow-hidden rounded-[26px] border border-[var(--line)] bg-[var(--surface)] shadow-[0_16px_40px_rgba(232,30,107,0.09)]">
+        <a href="https://link.coupang.com/a/iWhP8OEwSW" target="_blank" rel="noopener"
+          class="relative block overflow-hidden"
+          style="background: linear-gradient(135deg,#FFE0E6 0%,#FFC2CE 46%,#FFF0B8 100%)">
           <div class="relative flex min-h-[186px] items-center justify-between px-5 py-5">
             <div class="min-w-0">
-              <div class="inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-black tracking-tight text-[#1E1B1E]">
+              <div
+                class="inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-black tracking-tight text-[#1E1B1E]">
                 <i data-lucide="flame" class="w-3.5 h-3.5 text-[#FF2E7E]"></i> PICK 2
               </div>
               <div class="mt-3 w-28 h-28 rounded-2xl overflow-hidden bg-white/90 p-1.5 shadow-md flex items-center justify-center">
@@ -242,13 +256,15 @@
                 <i data-lucide="truck" class="w-3.5 h-3.5"></i> 오늘 주문 · 빠른 배송
               </div>
             </div>
-            <div class="shrink-0 self-start rounded-[20px] bg-[var(--pink)] px-3 py-3 text-center text-white shadow-[0_10px_24px_rgba(255,46,126,0.38)]">
+            <div
+              class="shrink-0 self-start rounded-[20px] bg-[var(--pink)] px-3 py-3 text-center text-white shadow-[0_10px_24px_rgba(255,46,126,0.38)]">
               <div class="text-[11px] font-extrabold">할인</div>
               <div class="num text-[32px] font-extrabold leading-none">75%</div>
               <div class="mt-1 text-[10px] font-bold opacity-90">오늘만</div>
             </div>
           </div>
-          <span class="absolute bottom-3 right-3 inline-flex items-center gap-1 rounded-full bg-black/25 px-2 py-1 text-[10px] font-bold text-white backdrop-blur-sm">
+          <span
+            class="absolute bottom-3 right-3 inline-flex items-center gap-1 rounded-full bg-black/25 px-2 py-1 text-[10px] font-bold text-white backdrop-blur-sm">
             자세히 보기 <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
           </span>
         </a>
@@ -263,8 +279,10 @@
           </a>
 
           <div class="mt-3 flex flex-wrap items-center gap-2">
-            <span class="rounded-full bg-[var(--surface-2)] px-2.5 py-1 text-[12px] font-bold text-[#5C2E43]">겨울 필수</span>
-            <span class="rounded-full bg-[var(--surface-2)] px-2.5 py-1 text-[12px] font-bold text-[#5C2E43]">4종 세트</span>
+            <span class="rounded-full bg-[var(--surface-2)] px-2.5 py-1 text-[12px] font-bold text-[#5C2E43]">겨울
+              필수</span>
+            <span class="rounded-full bg-[var(--surface-2)] px-2.5 py-1 text-[12px] font-bold text-[#5C2E43]">4종
+              세트</span>
           </div>
 
           <div class="mt-4 flex items-center justify-between border-t border-dashed border-[var(--line)] pt-3">
@@ -276,24 +294,19 @@
           </div>
 
           <!-- Accordion Toggle -->
-          <button 
-            type="button" 
-            onclick="toggleAccordion('why2', this)"
-            class="mt-3 flex w-full items-center justify-between rounded-xl bg-[#F8F4F5] px-3 py-2.5 text-left text-[13px] font-bold text-[#553A48]"
-          >
-            <span class="flex items-center gap-1.5"><i data-lucide="sparkles" class="w-3.5 h-3.5 text-[var(--pink)]"></i> 왜 오늘의 PICK인가요?</span>
+          <button type="button" onclick="toggleAccordion('why2', this)"
+            class="mt-3 flex w-full items-center justify-between rounded-xl bg-[#F8F4F5] px-3 py-2.5 text-left text-[13px] font-bold text-[#553A48]">
+            <span class="flex items-center gap-1.5"><i data-lucide="sparkles"
+                class="w-3.5 h-3.5 text-[var(--pink)]"></i> 왜 오늘의 PICK인가요?</span>
             <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i>
           </button>
-          <p id="why2" class="hidden mt-2 rounded-xl bg-[var(--surface-2)] px-3 py-3 text-[13px] leading-6 text-[var(--muted)]">
+          <p id="why2"
+            class="hidden mt-2 rounded-xl bg-[var(--surface-2)] px-3 py-3 text-[13px] leading-6 text-[var(--muted)]">
             향별로 골라 쓰는 재미가 있는 4종 세트. 건조해지기 쉬운 겨울 손을 가방, 책상, 침대 옆에 하나씩 두고 챙겨요.
           </p>
 
-          <a 
-            href="https://link.coupang.com/a/iWhP8OEwSW" 
-            target="_blank" 
-            rel="noopener"
-            class="mt-4 flex h-[52px] items-center justify-center gap-2 rounded-2xl bg-[var(--pink)] text-[16px] font-black text-white shadow-[0_10px_22px_rgba(255,46,126,0.28)] transition active:scale-[0.98]"
-          >
+          <a href="https://link.coupang.com/a/iWhP8OEwSW" target="_blank" rel="noopener"
+            class="mt-4 flex h-[52px] items-center justify-center gap-2 rounded-2xl bg-[var(--pink)] text-[16px] font-black text-white shadow-[0_10px_22px_rgba(255,46,126,0.28)] transition active:scale-[0.98]">
             쿠팡에서 보기 <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
           </a>
           <p class="mt-2 text-center text-[11px] text-[var(--muted)]">버튼을 누르면 쿠팡 상품 페이지로 이동해요</p>
@@ -301,22 +314,20 @@
       </article>
 
       <!-- PRODUCT 3: 고당도선별 세척사과 2kg -->
-      <article class="overflow-hidden rounded-[26px] border border-[var(--line)] bg-[var(--surface)] shadow-[0_16px_40px_rgba(232,30,107,0.09)]">
-        <a 
-          href="https://link.coupang.com/a/iWhWSnA7eC" 
-          target="_blank" 
-          rel="noopener"
-          class="relative block overflow-hidden" 
-          style="background: linear-gradient(135deg,#FFE0E6 0%,#FFC2CE 46%,#FFF0B8 100%)"
-        >
+      <article
+        class="overflow-hidden rounded-[26px] border border-[var(--line)] bg-[var(--surface)] shadow-[0_16px_40px_rgba(232,30,107,0.09)]">
+        <a href="https://link.coupang.com/a/iWhWSnA7eC" target="_blank" rel="noopener"
+          class="relative block overflow-hidden"
+          style="background: linear-gradient(135deg,#FFE0E6 0%,#FFC2CE 46%,#FFF0B8 100%)">
           <div class="relative flex min-h-[186px] items-center justify-between px-5 py-5">
             <div class="min-w-0">
-              <div class="inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-black tracking-tight text-[#1E1B1E]">
+              <div
+                class="inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-black tracking-tight text-[#1E1B1E]">
                 <i data-lucide="flame" class="w-3.5 h-3.5 text-[#FF2E7E]"></i> PICK 3
               </div>
               <div class="mt-3 w-28 h-28 rounded-2xl overflow-hidden bg-white/90 p-1.5 shadow-md flex items-center justify-center">
                 <img 
-                  src="https://thumbnail6.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/2020/07/07/11/7/8381dd00-cf7f-4b08-8fec-02421379f8c6.jpg" 
+                  src="https://thumbnail.coupangcdn.com/thumbnails/remote/640x640ex/image/retail/images/2297343134772336-b7918090-8f17-48b6-ada5-1940a85bac9d.jpg" 
                   referrerpolicy="no-referrer" 
                   alt="고당도선별 곰곰 세척사과 2kg" 
                   class="w-full h-full object-contain rounded-xl"
@@ -326,13 +337,15 @@
                 <i data-lucide="truck" class="w-3.5 h-3.5"></i> 신선 · 빠른 배송
               </div>
             </div>
-            <div class="shrink-0 self-start rounded-[20px] bg-[var(--pink)] px-3 py-3 text-center text-white shadow-[0_10px_24px_rgba(255,46,126,0.38)]">
+            <div
+              class="shrink-0 self-start rounded-[20px] bg-[var(--pink)] px-3 py-3 text-center text-white shadow-[0_10px_24px_rgba(255,46,126,0.38)]">
               <div class="text-[11px] font-extrabold">할인</div>
               <div class="num text-[28px] font-extrabold leading-none">오늘특가</div>
               <div class="mt-1 text-[10px] font-bold opacity-90">선착순</div>
             </div>
           </div>
-          <span class="absolute bottom-3 right-3 inline-flex items-center gap-1 rounded-full bg-black/25 px-2 py-1 text-[10px] font-bold text-white backdrop-blur-sm">
+          <span
+            class="absolute bottom-3 right-3 inline-flex items-center gap-1 rounded-full bg-black/25 px-2 py-1 text-[10px] font-bold text-white backdrop-blur-sm">
             자세히 보기 <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
           </span>
         </a>
@@ -346,7 +359,8 @@
           </a>
 
           <div class="mt-3 flex flex-wrap items-center gap-2">
-            <span class="rounded-full bg-[var(--surface-2)] px-2.5 py-1 text-[12px] font-bold text-[#5C2E43]">껍질째 바로</span>
+            <span class="rounded-full bg-[var(--surface-2)] px-2.5 py-1 text-[12px] font-bold text-[#5C2E43]">껍질째
+              바로</span>
             <span class="rounded-full bg-[var(--surface-2)] px-2.5 py-1 text-[12px] font-bold text-[#5C2E43]">고당도</span>
           </div>
 
@@ -359,24 +373,19 @@
           </div>
 
           <!-- Accordion Toggle -->
-          <button 
-            type="button" 
-            onclick="toggleAccordion('why3', this)"
-            class="mt-3 flex w-full items-center justify-between rounded-xl bg-[#F8F4F5] px-3 py-2.5 text-left text-[13px] font-bold text-[#553A48]"
-          >
-            <span class="flex items-center gap-1.5"><i data-lucide="sparkles" class="w-3.5 h-3.5 text-[var(--pink)]"></i> 왜 오늘의 PICK인가요?</span>
+          <button type="button" onclick="toggleAccordion('why3', this)"
+            class="mt-3 flex w-full items-center justify-between rounded-xl bg-[#F8F4F5] px-3 py-2.5 text-left text-[13px] font-bold text-[#553A48]">
+            <span class="flex items-center gap-1.5"><i data-lucide="sparkles"
+                class="w-3.5 h-3.5 text-[var(--pink)]"></i> 왜 오늘의 PICK인가요?</span>
             <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i>
           </button>
-          <p id="why3" class="hidden mt-2 rounded-xl bg-[var(--surface-2)] px-3 py-3 text-[13px] leading-6 text-[var(--muted)]">
+          <p id="why3"
+            class="hidden mt-2 rounded-xl bg-[var(--surface-2)] px-3 py-3 text-[13px] leading-6 text-[var(--muted)]">
             이미 깨끗하게 세척되어 껍질째 바로 먹기 좋아요. 고당도로 선별한 사과라 아침 사과, 도시락, 간식으로 매일 꺼내기 편합니다.
           </p>
 
-          <a 
-            href="https://link.coupang.com/a/iWhWSnA7eC" 
-            target="_blank" 
-            rel="noopener"
-            class="mt-4 flex h-[52px] items-center justify-center gap-2 rounded-2xl bg-[var(--pink)] text-[16px] font-black text-white shadow-[0_10px_22px_rgba(255,46,126,0.28)] transition active:scale-[0.98]"
-          >
+          <a href="https://link.coupang.com/a/iWhWSnA7eC" target="_blank" rel="noopener"
+            class="mt-4 flex h-[52px] items-center justify-center gap-2 rounded-2xl bg-[var(--pink)] text-[16px] font-black text-white shadow-[0_10px_22px_rgba(255,46,126,0.28)] transition active:scale-[0.98]">
             쿠팡에서 보기 <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
           </a>
           <p class="mt-2 text-center text-[11px] text-[var(--muted)]">버튼을 누르면 쿠팡 상품 페이지로 이동해요</p>
@@ -397,17 +406,28 @@
 
       <!-- Date Tabs -->
       <div class="mt-4 flex gap-2 overflow-x-auto no-scrollbar pb-1" id="dateTabs">
-        <button onclick="selectDate('11/23')" class="date-tab flex shrink-0 items-center gap-1.5 rounded-full px-4 py-2.5 text-[13px] font-black bg-[var(--pink)] text-white shadow-[0_8px_18px_rgba(255,46,126,0.28)]" data-date="11/23">
+        <button onclick="selectDate('11/23')"
+          class="date-tab flex shrink-0 items-center gap-1.5 rounded-full px-4 py-2.5 text-[13px] font-black bg-[var(--pink)] text-white shadow-[0_8px_18px_rgba(255,46,126,0.28)]"
+          data-date="11/23">
           11/23 (어제) <span class="rounded-full px-1.5 py-[1px] text-[10px] bg-white/25 text-white">3개</span>
         </button>
-        <button onclick="selectDate('11/22')" class="date-tab flex shrink-0 items-center gap-1.5 rounded-full px-4 py-2.5 text-[13px] font-black border border-[var(--line)] bg-[var(--surface)] text-[var(--ink)]" data-date="11/22">
-          11/22 <span class="rounded-full px-1.5 py-[1px] text-[10px] bg-[var(--surface-2)] text-[var(--muted)]">3개</span>
+        <button onclick="selectDate('11/22')"
+          class="date-tab flex shrink-0 items-center gap-1.5 rounded-full px-4 py-2.5 text-[13px] font-black border border-[var(--line)] bg-[var(--surface)] text-[var(--ink)]"
+          data-date="11/22">
+          11/22 <span
+            class="rounded-full px-1.5 py-[1px] text-[10px] bg-[var(--surface-2)] text-[var(--muted)]">3개</span>
         </button>
-        <button onclick="selectDate('11/11')" class="date-tab flex shrink-0 items-center gap-1.5 rounded-full px-4 py-2.5 text-[13px] font-black border border-[var(--line)] bg-[var(--surface)] text-[var(--ink)]" data-date="11/11">
-          11/11 <span class="rounded-full px-1.5 py-[1px] text-[10px] bg-[var(--surface-2)] text-[var(--muted)]">3개</span>
+        <button onclick="selectDate('11/11')"
+          class="date-tab flex shrink-0 items-center gap-1.5 rounded-full px-4 py-2.5 text-[13px] font-black border border-[var(--line)] bg-[var(--surface)] text-[var(--ink)]"
+          data-date="11/11">
+          11/11 <span
+            class="rounded-full px-1.5 py-[1px] text-[10px] bg-[var(--surface-2)] text-[var(--muted)]">3개</span>
         </button>
-        <button onclick="selectDate('11/10')" class="date-tab flex shrink-0 items-center gap-1.5 rounded-full px-4 py-2.5 text-[13px] font-black border border-[var(--line)] bg-[var(--surface)] text-[var(--ink)]" data-date="11/10">
-          11/10 <span class="rounded-full px-1.5 py-[1px] text-[10px] bg-[var(--surface-2)] text-[var(--muted)]">3개</span>
+        <button onclick="selectDate('11/10')"
+          class="date-tab flex shrink-0 items-center gap-1.5 rounded-full px-4 py-2.5 text-[13px] font-black border border-[var(--line)] bg-[var(--surface)] text-[var(--ink)]"
+          data-date="11/10">
+          11/10 <span
+            class="rounded-full px-1.5 py-[1px] text-[10px] bg-[var(--surface-2)] text-[var(--muted)]">3개</span>
         </button>
       </div>
 
@@ -416,7 +436,8 @@
         <!-- Rendered dynamically by script -->
       </div>
 
-      <p class="mt-4 flex items-center justify-center gap-1.5 rounded-2xl bg-[var(--surface)] px-3 py-3 text-center text-[12px] font-bold text-[var(--muted)]">
+      <p
+        class="mt-4 flex items-center justify-center gap-1.5 rounded-2xl bg-[var(--surface)] px-3 py-3 text-center text-[12px] font-bold text-[var(--muted)]">
         <i data-lucide="clock-3" class="w-3.5 h-3.5 text-[var(--pink)]"></i> 매일 밤 12시 새로운 3개가 업데이트됩니다.
       </p>
     </section>
