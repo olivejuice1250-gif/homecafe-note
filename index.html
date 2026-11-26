@@ -83,32 +83,27 @@
       <span class="text-[12px]">매일 엄선 특가 3개만 · 실시간 한정 수량</span>
     </header>
 
-    <!-- Master Switcher: [⚡ 쿠팡] <-> [🔥 G마켓] <-> [💎 네이버] <-> [🎁 토스] -->
-    <div class="mt-3 p-1.5 bg-[var(--surface-2)] rounded-2xl flex items-center border border-[var(--line)] gap-1.5 shadow-sm">
-      <button id="tabCoupangBtn" onclick="switchMainTab('coupang')"
-        class="flex-1 py-3 rounded-xl text-[15px] font-black text-white bg-[var(--pink)] shadow-sm flex items-center justify-center gap-1.5 transition-all">
-        <i data-lucide="zap" class="w-4 h-4 text-amber-300"></i>
-        <span>쿠팡</span>
-      </button>
+    <!-- Master Switcher: [🔥 G마켓 특가] <-> [⚡ 쿠팡 특가] <-> [💎 네이버 브랜드] -->
+    <div class="mt-3 p-1.5 bg-[var(--surface-2)] rounded-2xl flex items-center border border-[var(--line)] gap-2 shadow-sm">
       <button id="tabGmarketBtn" onclick="switchMainTab('gmarket')"
-        class="flex-1 py-3 rounded-xl text-[15px] font-black text-[var(--muted)] hover:text-[var(--ink)] flex items-center justify-center gap-1.5 transition-all">
-        <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+        class="flex-1 py-3.5 rounded-xl text-[16px] font-black text-white bg-emerald-600 shadow-sm flex items-center justify-center gap-1.5 transition-all">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-white"></span>
         <span>G마켓</span>
       </button>
+      <button id="tabCoupangBtn" onclick="switchMainTab('coupang')"
+        class="flex-1 py-3.5 rounded-xl text-[16px] font-black text-[var(--muted)] hover:text-[var(--ink)] flex items-center justify-center gap-1.5 transition-all">
+        <i data-lucide="zap" class="w-4 h-4 text-amber-400"></i>
+        <span>쿠팡</span>
+      </button>
       <button id="tabNaverBtn" onclick="switchMainTab('naver')"
-        class="flex-1 py-3 rounded-xl text-[15px] font-black text-[var(--muted)] hover:text-[var(--ink)] flex items-center justify-center gap-1.5 transition-all">
+        class="flex-1 py-3.5 rounded-xl text-[16px] font-black text-[var(--muted)] hover:text-[var(--ink)] flex items-center justify-center gap-1.5 transition-all">
         <span class="inline-block w-2.5 h-2.5 rounded-full bg-[#03C75A]"></span>
         <span>네이버</span>
       </button>
-      <button id="tabTossBtn" onclick="switchMainTab('toss')"
-        class="flex-1 py-3 rounded-xl text-[15px] font-black text-[var(--muted)] hover:text-[var(--ink)] flex items-center justify-center gap-1.5 transition-all">
-        <i data-lucide="gift" class="w-4 h-4"></i>
-        <span>토스</span>
-      </button>
     </div>
 
-    <!-- Gmarket Section (Initially Hidden or Shown on Tab Click) -->
-    <div id="gmarketSection" class="hidden">
+    <!-- Gmarket Section (Default Active, High Commission First) -->
+    <div id="gmarketSection">
       <!-- Gmarket Superdeal Shortcut Banner -->
       <a href="https://www.gmarket.co.kr/?spm=gmktpc.superdealhome.0.0.38517ecfMUd5M0" target="_blank" rel="noopener"
         class="mt-3 flex items-center justify-between p-3.5 bg-emerald-50 rounded-2xl border border-emerald-200 text-emerald-900 shadow-sm hover:bg-emerald-100/70 transition">
@@ -466,108 +461,14 @@
       <!-- Naver 3 Pick Product Cards -->
       <div class="mt-5 space-y-4">
 
-        <!-- NAVER PRODUCT 1: 잇퓨 레티노니 크림 30ml 3개 -->
-        <article class="overflow-hidden rounded-[26px] border border-green-200 bg-[var(--surface)] shadow-[0_16px_40px_rgba(3,199,90,0.08)]">
-          <a href="https://search.shopping.naver.com/search/all?query=%EC%9E%87%ED%93%A8+%EB%A0%88%ED%8B%B0%EB%85%B8%EB%8B%88+%ED%81%AC%EB%A6%BC" target="_blank" rel="noopener" class="relative block overflow-hidden"
-            style="background: linear-gradient(135deg,#E8F8F5 0%,#D1F2EB 48%,#FCF3CF 100%)">
-            <div class="relative flex min-h-[220px] items-center justify-between px-5 py-5">
-              <div class="min-w-0">
-                <div class="inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-black tracking-tight text-[#1E1B1E]">
-                  <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#03C75A]"></i> 네이버 1위 뷰티
-                </div>
-                <div class="mt-3 w-[168px] h-[168px] rounded-2xl overflow-hidden bg-white/95 p-3 shadow-lg flex flex-col items-center justify-center text-center">
-                  <span class="text-[52px]">✨</span>
-                  <span class="text-[11px] font-extrabold text-slate-700 mt-1">잇퓨 레티노니 크림 3개</span>
-                </div>
-                <div class="mt-3 flex items-center gap-1.5 text-[12px] font-bold text-[#263238]">
-                  <i data-lucide="truck" class="w-3.5 h-3.5 text-[#03C75A]"></i> 본사 무료배송
-                </div>
-              </div>
-              <div class="shrink-0 self-start rounded-[20px] bg-[#03C75A] px-3 py-3 text-center text-white shadow-[0_10px_24px_rgba(3,199,90,0.38)]">
-                <div class="text-[11px] font-extrabold">혜택가</div>
-                <div class="num text-[30px] font-extrabold leading-none">-63%</div>
-                <div class="mt-1 text-[10px] font-bold opacity-90">3개 세트</div>
-              </div>
-            </div>
-          </a>
-
-          <div class="p-5 pt-4">
-            <a href="https://search.shopping.naver.com/search/all?query=%EC%9E%87%ED%93%A8+%EB%A0%88%ED%8B%B0%EB%85%B8%EB%8B%88+%ED%81%AC%EB%A6%BC" target="_blank" rel="noopener" class="block">
-              <h2 class="text-[20px] font-black leading-[1.25] tracking-[-0.02em] text-[var(--ink)]">
-                [잇퓨] 레티노니 비타민A 레티날 리프팅 에이징 크림 30ml x 3개
-              </h2>
-              <div class="mt-3 flex flex-wrap items-end gap-x-2 gap-y-1">
-                <span class="num text-[30px] font-extrabold leading-none text-[#03C75A]">44,400원</span>
-                <span class="pb-[2px] text-[14px] font-medium text-[var(--muted)] line-through">120,000원</span>
-              </div>
-            </a>
-            <div class="mt-3 flex flex-wrap items-center gap-2">
-              <span class="rounded-full bg-green-50 px-2.5 py-1 text-[12px] font-bold text-green-800 border border-green-200">63% 단독특가</span>
-              <span class="rounded-full bg-green-50 px-2.5 py-1 text-[12px] font-bold text-green-800 border border-green-200">주름·탄력 3중 리프팅</span>
-            </div>
-            <a href="https://search.shopping.naver.com/search/all?query=%EC%9E%87%ED%93%A8+%EB%A0%88%ED%8B%B0%EB%85%B8%EB%8B%88+%ED%81%AC%EB%A6%BC" target="_blank" rel="noopener"
-              class="mt-4 flex h-[52px] items-center justify-center gap-2 rounded-2xl bg-[#03C75A] text-[16px] font-black text-white shadow-[0_10px_22px_rgba(3,199,90,0.28)] transition hover:bg-[#02b351] active:scale-[0.98]">
-              네이버 공식스토어에서 보기 <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-            </a>
-            <p class="mt-2 text-center text-[11px] text-[var(--muted)]">이 포스팅은 네이버 쇼핑 커넥트 활동의 일환으로 수수료를 제공받습니다.</p>
-          </div>
-        </article>
-
-        <!-- NAVER PRODUCT 2: 뷰티영 코노피 LED EMS 복코 마사지기 -->
-        <article class="overflow-hidden rounded-[26px] border border-green-200 bg-[var(--surface)] shadow-[0_16px_40px_rgba(3,199,90,0.08)]">
-          <a href="https://search.shopping.naver.com/search/all?query=%EB%B7%B0%ED%8B%B0%EC%98%81+%EC%BD%94%EB%85%B8%ED%94%BC+EMS+%EB%A7%88%EC%82%AC%EC%8B%80%EA%B8%B0" target="_blank" rel="noopener" class="relative block overflow-hidden"
-            style="background: linear-gradient(135deg,#FCF3CF 0%,#F9E79F 48%,#EDBB99 100%)">
-            <div class="relative flex min-h-[220px] items-center justify-between px-5 py-5">
-              <div class="min-w-0">
-                <div class="inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-black tracking-tight text-[#1E1B1E]">
-                  <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-700"></i> 뷰티 디바이스 1위
-                </div>
-                <div class="mt-3 w-[168px] h-[168px] rounded-2xl overflow-hidden bg-white/95 p-3 shadow-lg flex flex-col items-center justify-center text-center">
-                  <span class="text-[52px]">🌟</span>
-                  <span class="text-[11px] font-extrabold text-slate-700 mt-1">코노피 EMS 마사지기</span>
-                </div>
-                <div class="mt-3 flex items-center gap-1.5 text-[12px] font-bold text-[#263238]">
-                  <i data-lucide="truck" class="w-3.5 h-3.5 text-amber-700"></i> 무료배송
-                </div>
-              </div>
-              <div class="shrink-0 self-start rounded-[20px] bg-amber-700 px-3 py-3 text-center text-white shadow-[0_10px_24px_rgba(180,83,9,0.38)]">
-                <div class="text-[11px] font-extrabold">특가</div>
-                <div class="num text-[28px] font-extrabold leading-none">-47%</div>
-                <div class="mt-1 text-[10px] font-bold opacity-90">EMS 900샷</div>
-              </div>
-            </div>
-          </a>
-
-          <div class="p-5 pt-4">
-            <a href="https://search.shopping.naver.com/search/all?query=%EB%B7%B0%ED%8B%B0%EC%98%81+%EC%BD%94%EB%85%B8%ED%94%BC+EMS+%EB%A7%88%EC%82%AC%EC%8B%80%EA%B8%B0" target="_blank" rel="noopener" class="block">
-              <h2 class="text-[20px] font-black leading-[1.25] tracking-[-0.02em] text-[var(--ink)]">
-                [뷰티영] 코노피 LED EMS 복코 콧볼 축소 마사지기 900샷
-              </h2>
-              <div class="mt-3 flex flex-wrap items-end gap-x-2 gap-y-1">
-                <span class="num text-[30px] font-extrabold leading-none text-amber-700">78,900원</span>
-                <span class="pb-[2px] text-[14px] font-medium text-[var(--muted)] line-through">149,000원</span>
-              </div>
-            </a>
-            <div class="mt-3 flex flex-wrap items-center gap-2">
-              <span class="rounded-full bg-amber-50 px-2.5 py-1 text-[12px] font-bold text-amber-900 border border-amber-200">뷰티 인플루언서 대란템</span>
-              <span class="rounded-full bg-amber-50 px-2.5 py-1 text-[12px] font-bold text-amber-900 border border-amber-200">콧대 리프팅 케어</span>
-            </div>
-            <a href="https://search.shopping.naver.com/search/all?query=%EB%B7%B0%ED%8B%B0%EC%98%81+%EC%BD%94%EB%85%B8%ED%94%BC+EMS+%EB%A7%88%EC%82%AC%EC%8B%80%EA%B8%B0" target="_blank" rel="noopener"
-              class="mt-4 flex h-[52px] items-center justify-center gap-2 rounded-2xl bg-amber-700 text-[16px] font-black text-white shadow-[0_10px_22px_rgba(180,83,9,0.28)] transition hover:bg-amber-800 active:scale-[0.98]">
-              네이버 공식스토어에서 보기 <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-            </a>
-            <p class="mt-2 text-center text-[11px] text-[var(--muted)]">이 포스팅은 네이버 쇼핑 커넥트 활동의 일환으로 수수료를 제공받습니다.</p>
-          </div>
-        </article>
-
-        <!-- NAVER PRODUCT 3: 더후 에센셜 립글로우밤 -->
+        <!-- NAVER PRODUCT 1: 더후 에센셜 립글로우밤 -->
         <article class="overflow-hidden rounded-[26px] border border-green-200 bg-[var(--surface)] shadow-[0_16px_40px_rgba(3,199,90,0.08)]">
           <a href="https://naver.me/xM56RuCA" target="_blank" rel="noopener" class="relative block overflow-hidden"
             style="background: linear-gradient(135deg,#FDEDEC 0%,#FADBD8 48%,#F9E79F 100%)">
             <div class="relative flex min-h-[220px] items-center justify-between px-5 py-5">
               <div class="min-w-0">
                 <div class="inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-black tracking-tight text-[#1E1B1E]">
-                  <i data-lucide="sparkles" class="w-3.5 h-3.5 text-pink-500"></i> 스테디셀러
+                  <i data-lucide="sparkles" class="w-3.5 h-3.5 text-pink-500"></i> 네이버 1위 뷰티
                 </div>
                 <div class="mt-3 w-[168px] h-[168px] rounded-2xl overflow-hidden bg-white/95 p-3 shadow-lg flex flex-col items-center justify-center text-center">
                   <span class="text-[52px]">💄</span>
@@ -580,6 +481,9 @@
                 <div class="mt-1 text-[10px] font-bold opacity-90">+5,000P</div>
               </div>
             </div>
+            <span class="absolute bottom-3 right-3 inline-flex items-center gap-1 rounded-full bg-black/25 px-2 py-1 text-[10px] font-bold text-white backdrop-blur-sm">
+              자세히 보기 <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+            </span>
           </a>
 
           <div class="p-5 pt-4">
@@ -600,106 +504,115 @@
               class="mt-4 flex h-[52px] items-center justify-center gap-2 rounded-2xl bg-rose-600 text-[16px] font-black text-white shadow-[0_10px_22px_rgba(225,29,72,0.28)] transition hover:bg-rose-700 active:scale-[0.98]">
               네이버 공식스토어에서 보기 <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
             </a>
-            <p class="mt-2 text-center text-[11px] text-[var(--muted)]">이 포스팅은 네이버 쇼핑 커넥트 활동의 일환으로 수수료를 제공받습니다.</p>
+            <p class="mt-2 text-center text-[11px] text-[var(--muted)]">이 포스팅은 네이버 브랜드커넥트 활동의 일환으로 수수료를 제공받습니다.</p>
+          </div>
+        </article>
+
+        <!-- NAVER PRODUCT 2: [여행 특가] 5성급 그랜드 하얏트 제주 럭셔리 호캉스 패키지 -->
+        <article class="overflow-hidden rounded-[26px] border border-green-200 bg-[var(--surface)] shadow-[0_16px_40px_rgba(3,199,90,0.08)]">
+          <a href="https://search.shopping.naver.com/search/all?query=%EA%B7%B8%EB%9E%9c%EB%93%9C+%ED%95%98%EC%95%97%ED%8A%B8+%EC%A0%9C%EC%83%81+%ED%98%B8%ED%85%94+%EC%88%99%EB%B0%95%EA%B6%8C" target="_blank" rel="noopener" class="relative block overflow-hidden"
+            style="background: linear-gradient(135deg,#D4EFDF 0%,#A9DFBF 48%,#F9E79F 100%)">
+            <div class="relative flex min-h-[220px] items-center justify-between px-5 py-5">
+              <div class="min-w-0">
+                <div class="inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-black tracking-tight text-[#1E1B1E]">
+                  <i data-lucide="plane" class="w-3.5 h-3.5 text-emerald-600"></i> 네이버 공식 여행
+                </div>
+                <div class="mt-3 w-[168px] h-[168px] rounded-2xl overflow-hidden bg-white/95 p-3 shadow-lg flex flex-col items-center justify-center text-center">
+                  <span class="text-[52px]">🏨</span>
+                  <span class="text-[11px] font-extrabold text-slate-700 mt-1">그랜드 하얏트 제주</span>
+                </div>
+                <div class="mt-3 flex items-center gap-1.5 text-[12px] font-bold text-[#263238]">
+                  <i data-lucide="calendar" class="w-3.5 h-3.5 text-emerald-600"></i> 실시간 예약 확정
+                </div>
+              </div>
+              <div class="shrink-0 self-start rounded-[20px] bg-emerald-700 px-3 py-3 text-center text-white shadow-[0_10px_24px_rgba(4,120,87,0.38)]">
+                <div class="text-[11px] font-extrabold">단독특가</div>
+                <div class="num text-[30px] font-extrabold leading-none">-42%</div>
+                <div class="mt-1 text-[10px] font-bold opacity-90">조식2인</div>
+              </div>
+            </div>
+            <span class="absolute bottom-3 right-3 inline-flex items-center gap-1 rounded-full bg-black/25 px-2 py-1 text-[10px] font-bold text-white backdrop-blur-sm">
+              자세히 보기 <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+            </span>
+          </a>
+
+          <div class="p-5 pt-4">
+            <a href="https://search.shopping.naver.com/search/all?query=%EA%B7%B8%EB%9E%9c%EB%93%9C+%ED%95%98%EC%95%97%ED%8A%B8+%EC%A0%9C%EC%83%81+%ED%98%B8%ED%85%94+%EC%88%99%EB%B0%95%EA%B6%8C" target="_blank" rel="noopener" class="block">
+              <h2 class="text-[20px] font-black leading-[1.25] tracking-[-0.02em] text-[var(--ink)]">
+                [네이버 공식 여행] 5성급 그랜드 하얏트 제주 오션뷰 호캉스 패키지
+              </h2>
+              <div class="mt-3 flex flex-wrap items-end gap-x-2 gap-y-1">
+                <span class="num text-[30px] font-extrabold leading-none text-emerald-700">219,000원</span>
+                <span class="pb-[2px] text-[14px] font-medium text-[var(--muted)] line-through">380,000원</span>
+              </div>
+            </a>
+            <div class="mt-3 flex flex-wrap items-center gap-2">
+              <span class="rounded-full bg-emerald-50 px-2.5 py-1 text-[12px] font-bold text-emerald-800 border border-emerald-200">조식 뷔페 2인 무료</span>
+              <span class="rounded-full bg-emerald-50 px-2.5 py-1 text-[12px] font-bold text-emerald-800 border border-emerald-200">N포인트 최대 15,000P 적립</span>
+            </div>
+            <a href="https://search.shopping.naver.com/search/all?query=%EA%B7%B8%EB%9E%9c%EB%93%9C+%ED%95%98%EC%95%97%ED%8A%B8+%EC%A0%9C%EC%83%81+%ED%98%B8%ED%85%94+%EC%88%99%EB%B0%95%EA%B6%8C" target="_blank" rel="noopener"
+              class="mt-4 flex h-[52px] items-center justify-center gap-2 rounded-2xl bg-emerald-700 text-[16px] font-black text-white shadow-[0_10px_22px_rgba(4,120,87,0.28)] transition hover:bg-emerald-800 active:scale-[0.98]">
+              네이버 여행에서 예약하기 <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </a>
+            <p class="mt-2 text-center text-[11px] text-[var(--muted)]">이 포스팅은 네이버 브랜드커넥트 활동의 일환으로 수수료를 제공받습니다.</p>
+          </div>
+        </article>
+
+        <!-- NAVER PRODUCT 3: 베러베스트 당일로스팅 블랜드 원두 500g -->
+        <article class="overflow-hidden rounded-[26px] border border-green-200 bg-[var(--surface)] shadow-[0_16px_40px_rgba(3,199,90,0.08)]">
+          <a href="https://search.shopping.naver.com/search/all?query=%EB%B2%A0%EB%9F%AC%EB%B2%A0%EC%8A%A4%ED%8A%B8+%EB%B8%94%EB%9E%9C%EB%93%9C+%EC%9B%90%EB%91%90" target="_blank" rel="noopener" class="relative block overflow-hidden"
+            style="background: linear-gradient(135deg,#FEF9E7 0%,#FDEBD0 48%,#EDBB99 100%)">
+            <div class="relative flex min-h-[220px] items-center justify-between px-5 py-5">
+              <div class="min-w-0">
+                <div class="inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-black tracking-tight text-[#1E1B1E]">
+                  <i data-lucide="coffee" class="w-3.5 h-3.5 text-amber-800"></i> 홈카페 1위
+                </div>
+                <div class="mt-3 w-[168px] h-[168px] rounded-2xl overflow-hidden bg-white/95 p-3 shadow-lg flex flex-col items-center justify-center text-center">
+                  <span class="text-[52px]">☕</span>
+                  <span class="text-[11px] font-extrabold text-slate-700 mt-1">베러베스트 당일원두</span>
+                </div>
+                <div class="mt-3 flex items-center gap-1.5 text-[12px] font-bold text-[#263238]">
+                  <i data-lucide="truck" class="w-3.5 h-3.5 text-amber-800"></i> 당일 로스팅 출고
+                </div>
+              </div>
+              <div class="shrink-0 self-start rounded-[20px] bg-amber-800 px-3 py-3 text-center text-white shadow-[0_10px_24px_rgba(146,64,14,0.38)]">
+                <div class="text-[11px] font-extrabold">산지직송</div>
+                <div class="num text-[28px] font-extrabold leading-none">500g</div>
+                <div class="mt-1 text-[10px] font-bold opacity-90">갓볶은원두</div>
+              </div>
+            </div>
+            <span class="absolute bottom-3 right-3 inline-flex items-center gap-1 rounded-full bg-black/25 px-2 py-1 text-[10px] font-bold text-white backdrop-blur-sm">
+              자세히 보기 <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+            </span>
+          </a>
+
+          <div class="p-5 pt-4">
+            <a href="https://search.shopping.naver.com/search/all?query=%EB%B2%A0%EB%9F%AC%EB%B2%A0%EC%8A%A4%ED%8A%B8+%EB%B8%94%EB%9E%9C%EB%93%9C+%EC%9B%90%EB%91%90" target="_blank" rel="noopener" class="block">
+              <h2 class="text-[20px] font-black leading-[1.25] tracking-[-0.02em] text-[var(--ink)]">
+                [본사] 베러베스트 프리미엄 당일로스팅 블랜드 원두 500g
+              </h2>
+              <div class="mt-3 flex flex-wrap items-end gap-x-2 gap-y-1">
+                <span class="num text-[30px] font-extrabold leading-none text-amber-800">14,900원</span>
+                <span class="pb-[2px] text-[14px] font-medium text-[var(--muted)] line-through">22,000원</span>
+              </div>
+            </a>
+            <div class="mt-3 flex flex-wrap items-center gap-2">
+              <span class="rounded-full bg-amber-50 px-2.5 py-1 text-[12px] font-bold text-amber-900 border border-amber-200">주문 즉시 당일 볶은 신선함</span>
+              <span class="rounded-full bg-amber-50 px-2.5 py-1 text-[12px] font-bold text-amber-900 border border-amber-200">다크초콜릿 고소한 단맛</span>
+            </div>
+            <a href="https://search.shopping.naver.com/search/all?query=%EB%B2%A0%EB%9F%AC%EB%B2%A0%EC%8A%A4%ED%8A%B8+%EB%B8%94%EB%9E%9C%EB%93%9C+%EC%9B%90%EB%91%90" target="_blank" rel="noopener"
+              class="mt-4 flex h-[52px] items-center justify-center gap-2 rounded-2xl bg-amber-800 text-[16px] font-black text-white shadow-[0_10px_22px_rgba(146,64,14,0.28)] transition hover:bg-amber-900 active:scale-[0.98]">
+              네이버 공식스토어에서 보기 <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </a>
+            <p class="mt-2 text-center text-[11px] text-[var(--muted)]">이 포스팅은 네이버 브랜드커넥트 활동의 일환으로 수수료를 제공받습니다.</p>
           </div>
         </article>
 
       </div>
     </div>
 
-    <!-- Toss Section (Initially Hidden) -->
-    <div id="tossSection" class="hidden">
-      <!-- Toss App Guide Banner -->
-      <div class="mt-3 p-4 bg-blue-50 rounded-2xl border border-blue-200 text-blue-900 shadow-sm">
-        <div class="flex items-start gap-3">
-          <span class="p-2.5 bg-blue-600 text-white rounded-xl shrink-0"><i data-lucide="smartphone" class="w-5 h-5"></i></span>
-          <div>
-            <div class="text-[14px] font-black">토스 모바일 앱 전용 공동구매</div>
-            <div class="text-[12px] font-medium text-blue-800 mt-0.5 leading-relaxed">
-              토스 공동구매는 모바일 인앱 전용 서비스입니다. 스마트폰에서 버튼을 누르면 <strong>토스 앱 쇼핑</strong>으로 자동 연결됩니다.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Toss Hero Title Section -->
-      <section
-        class="mt-4 rounded-[28px] border border-blue-200 bg-[var(--surface)] p-5 shadow-[0_12px_36px_rgba(0,100,255,0.08)]">
-        <div class="flex flex-wrap items-center justify-between gap-2">
-          <span
-            class="inline-flex items-center gap-1 rounded-full bg-blue-50 border border-blue-200 px-2.5 py-1 text-[11px] font-extrabold text-blue-600">
-            <i data-lucide="users" class="w-3.5 h-3.5 text-blue-600"></i> 토스 쇼핑 공동구매
-          </span>
-          <div class="inline-flex items-center gap-1.5 rounded-full bg-blue-50 border border-blue-200 px-3 py-1 text-[11px] font-extrabold text-blue-600 shadow-sm">
-            <i data-lucide="gift" class="w-3.5 h-3.5"></i> 토스페이 1초 간편결제
-          </div>
-        </div>
-
-        <h1 class="mt-3 text-[30px] font-black leading-tight tracking-[-0.03em]">
-          토스 공동구매 <span class="text-blue-600">3 PICK</span>
-        </h1>
-        <p class="mt-1 text-[13px] font-bold text-[var(--muted)]">
-          토스 앱에서 친구와 함께 모이면 가격이 반토막 나는 실시간 공구 대란템입니다.
-        </p>
-
-        <div class="mt-4 flex flex-wrap gap-2 text-[12px] font-bold text-[#42383E]">
-          <span class="inline-flex items-center gap-1 rounded-full border border-blue-200 bg-blue-50/50 px-3 py-1">
-            <i data-lucide="zap" class="w-3.5 h-3.5 text-blue-600"></i> 공구 오픈런
-          </span>
-          <span class="inline-flex items-center gap-1 rounded-full border border-blue-200 bg-blue-50/50 px-3 py-1">
-            <i data-lucide="shield" class="w-3.5 h-3.5 text-blue-600"></i> 토스페이 안심 결제
-          </span>
-        </div>
-      </section>
-
-      <!-- Toss 3 Pick Product Cards -->
-      <div class="mt-5 space-y-4">
-
-        <!-- TOSS PRODUCT 1: 파파네 통삼겹살 2kg -->
-        <article class="overflow-hidden rounded-[26px] border border-blue-200 bg-[var(--surface)] shadow-[0_16px_40px_rgba(0,100,255,0.08)]">
-          <div class="p-5">
-            <div class="flex items-center justify-between">
-              <span class="rounded-full bg-blue-50 text-blue-700 px-2.5 py-1 text-[11px] font-black">정육 공구 1위</span>
-              <span class="text-red-500 font-extrabold text-xs">수량 마감 임박</span>
-            </div>
-            <h2 class="mt-2 text-[19px] font-black text-[var(--ink)]">파파네정육점 신선 통삼겹살 2kg (수육/구이)</h2>
-            <div class="mt-2 flex items-baseline gap-2">
-              <span class="text-[28px] font-black text-blue-600 num">19,800원</span>
-              <span class="text-sm line-through text-[var(--muted)]">34,000원</span>
-            </div>
-            <p class="mt-2 text-xs text-[var(--muted)]">1kg당 9,900원 꼴! 모바일 토스 앱 열고 간편결제로 바로 구매 가능합니다.</p>
-            <button onclick="openTossShopping('파파네정육점 통삼겹살')"
-              class="mt-4 flex w-full h-[50px] items-center justify-center gap-2 rounded-2xl bg-blue-600 text-white font-black hover:bg-blue-700 active:scale-[0.98] transition">
-              토스 앱에서 바로보기 <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-            </button>
-          </div>
-        </article>
-
-        <!-- TOSS PRODUCT 2: 바세린 오리지널 100ml 3개 -->
-        <article class="overflow-hidden rounded-[26px] border border-blue-200 bg-[var(--surface)] shadow-[0_16px_40px_rgba(0,100,255,0.08)]">
-          <div class="p-5">
-            <div class="flex items-center justify-between">
-              <span class="rounded-full bg-blue-50 text-blue-700 px-2.5 py-1 text-[11px] font-black">겨울 보습 공구 1위</span>
-              <span class="text-emerald-600 font-extrabold text-xs">무료배송</span>
-            </div>
-            <h2 class="mt-2 text-[19px] font-black text-[var(--ink)]">바세린 오리지널 프로텍팅 젤리 100ml x 3개</h2>
-            <div class="mt-2 flex items-baseline gap-2">
-              <span class="text-[28px] font-black text-blue-600 num">8,900원</span>
-              <span class="text-sm line-through text-[var(--muted)]">15,000원</span>
-            </div>
-            <p class="mt-2 text-xs text-[var(--muted)]">겨울철 건조한 입술/손/발 완벽 보습 끝판왕 세트.</p>
-            <button onclick="openTossShopping('바세린 오리지널')"
-              class="mt-4 flex w-full h-[50px] items-center justify-center gap-2 rounded-2xl bg-blue-600 text-white font-black hover:bg-blue-700 active:scale-[0.98] transition">
-              토스 앱에서 바로보기 <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-            </button>
-          </div>
-        </article>
-
-      </div>
-    </div>
-
-    <!-- Coupang Section (Default Active) -->
-    <div id="coupangSection">
+    <!-- Coupang Section (Default Hidden, Shown on Tab Click) -->
+    <div id="coupangSection" class="hidden">
       <!-- Coupang Direct Search Bar -->
       <section class="mt-4">
         <form onsubmit="handleCoupangSearch(event)" class="relative flex items-center">
@@ -1128,44 +1041,37 @@
     // setInterval(updateCountdown, 1000);
     // updateCountdown();
 
-    // Master 4-Platform Tab Switcher
+    // Master 3-Platform Tab Switcher (Gmarket 1st, Coupang, Naver)
     function switchMainTab(platform) {
-      const coupangSec = document.getElementById('coupangSection');
       const gmarketSec = document.getElementById('gmarketSection');
+      const coupangSec = document.getElementById('coupangSection');
       const naverSec = document.getElementById('naverSection');
-      const tossSec = document.getElementById('tossSection');
 
-      const coupangBtn = document.getElementById('tabCoupangBtn');
       const gmarketBtn = document.getElementById('tabGmarketBtn');
+      const coupangBtn = document.getElementById('tabCoupangBtn');
       const naverBtn = document.getElementById('tabNaverBtn');
-      const tossBtn = document.getElementById('tabTossBtn');
 
       // Hide all sections
-      if (coupangSec) coupangSec.classList.add('hidden');
       if (gmarketSec) gmarketSec.classList.add('hidden');
+      if (coupangSec) coupangSec.classList.add('hidden');
       if (naverSec) naverSec.classList.add('hidden');
-      if (tossSec) tossSec.classList.add('hidden');
 
-      // Reset button styles (larger font 15px)
-      const defaultBtnClass = "flex-1 py-3 rounded-xl text-[15px] font-black text-[var(--muted)] hover:text-[var(--ink)] flex items-center justify-center gap-1.5 transition-all";
-      if (coupangBtn) coupangBtn.className = defaultBtnClass;
+      // Reset button styles (16px font-black)
+      const defaultBtnClass = "flex-1 py-3.5 rounded-xl text-[16px] font-black text-[var(--muted)] hover:text-[var(--ink)] flex items-center justify-center gap-1.5 transition-all";
       if (gmarketBtn) gmarketBtn.className = defaultBtnClass;
+      if (coupangBtn) coupangBtn.className = defaultBtnClass;
       if (naverBtn) naverBtn.className = defaultBtnClass;
-      if (tossBtn) tossBtn.className = defaultBtnClass;
 
       // Activate selected
-      if (platform === 'coupang') {
-        if (coupangSec) coupangSec.classList.remove('hidden');
-        if (coupangBtn) coupangBtn.className = "flex-1 py-3 rounded-xl text-[15px] font-black text-white bg-[var(--pink)] shadow-sm flex items-center justify-center gap-1.5 transition-all";
-      } else if (platform === 'gmarket') {
+      if (platform === 'gmarket') {
         if (gmarketSec) gmarketSec.classList.remove('hidden');
-        if (gmarketBtn) gmarketBtn.className = "flex-1 py-3 rounded-xl text-[15px] font-black text-white bg-emerald-600 shadow-sm flex items-center justify-center gap-1.5 transition-all";
+        if (gmarketBtn) gmarketBtn.className = "flex-1 py-3.5 rounded-xl text-[16px] font-black text-white bg-emerald-600 shadow-sm flex items-center justify-center gap-1.5 transition-all";
+      } else if (platform === 'coupang') {
+        if (coupangSec) coupangSec.classList.remove('hidden');
+        if (coupangBtn) coupangBtn.className = "flex-1 py-3.5 rounded-xl text-[16px] font-black text-white bg-[var(--pink)] shadow-sm flex items-center justify-center gap-1.5 transition-all";
       } else if (platform === 'naver') {
         if (naverSec) naverSec.classList.remove('hidden');
-        if (naverBtn) naverBtn.className = "flex-1 py-3 rounded-xl text-[15px] font-black text-white bg-[#03C75A] shadow-sm flex items-center justify-center gap-1.5 transition-all";
-      } else if (platform === 'toss') {
-        if (tossSec) tossSec.classList.remove('hidden');
-        if (tossBtn) tossBtn.className = "flex-1 py-3 rounded-xl text-[15px] font-black text-white bg-blue-600 shadow-sm flex items-center justify-center gap-1.5 transition-all";
+        if (naverBtn) naverBtn.className = "flex-1 py-3.5 rounded-xl text-[16px] font-black text-white bg-[#03C75A] shadow-sm flex items-center justify-center gap-1.5 transition-all";
       }
 
       lucide.createIcons();
@@ -1179,17 +1085,6 @@
         return;
       }
       window.open(`https://browse.gmarket.co.kr/search?keyword=${encodeURIComponent(query)}`, '_blank');
-    }
-
-    function openTossShopping(keyword) {
-      const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-      if (isMobile) {
-        // 모바일 접속 시: 토스 앱 즉시 실행 (인앱 쇼핑 탭 직행)
-        window.location.href = 'supertoss://pay/shopping';
-      } else {
-        // PC 접속 시: 친절한 모바일 앱 실행 안내 (AccessDenied 403 / 404 차단)
-        alert('토스 공동구매는 모바일 토스 앱 전용 서비스입니다.\n\n스마트폰 토스 앱 실행 ➔ [토스페이] ➔ [쇼핑] 메뉴에서 ' + (keyword || '해당 상품') + '을 검색하시면 동일한 파격 공구가로 구매하실 수 있습니다!');
-      }
     }
 
     function handleNaverSearch(e) {
@@ -1447,7 +1342,8 @@
       lucide.createIcons();
     }
 
-    // Default to yesterday (11/25)
+    // Initialize default tabs: Gmarket 1st tab & yesterday (11/25)
+    switchMainTab('gmarket');
     selectDate('11/25');
   </script>
 </body>
