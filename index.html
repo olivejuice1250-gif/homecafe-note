@@ -83,36 +83,47 @@
       <span class="text-[12px]">매일 엄선 특가 3개만 · 실시간 한정 수량</span>
     </header>
 
-    <!-- Master Switcher: [⚡ 쿠팡 특가] <-> [🔥 G마켓 (25%)] <-> [💎 네이버 (13%)] <-> [🎁 토스 공동구매] -->
-    <div class="mt-2.5 p-1 bg-[var(--surface-2)] rounded-2xl flex items-center border border-[var(--line)] gap-1">
+    <!-- Master Switcher: [⚡ 쿠팡] <-> [🔥 G마켓] <-> [💎 네이버] <-> [🎁 토스] -->
+    <div class="mt-3 p-1.5 bg-[var(--surface-2)] rounded-2xl flex items-center border border-[var(--line)] gap-1.5 shadow-sm">
       <button id="tabCoupangBtn" onclick="switchMainTab('coupang')"
-        class="flex-1 py-2 rounded-xl text-[11px] font-black text-white bg-[var(--pink)] shadow-sm flex items-center justify-center gap-1 transition-all">
-        <i data-lucide="zap" class="w-3 h-3 text-amber-300"></i>
+        class="flex-1 py-3 rounded-xl text-[15px] font-black text-white bg-[var(--pink)] shadow-sm flex items-center justify-center gap-1.5 transition-all">
+        <i data-lucide="zap" class="w-4 h-4 text-amber-300"></i>
         <span>쿠팡</span>
       </button>
       <button id="tabGmarketBtn" onclick="switchMainTab('gmarket')"
-        class="flex-1 py-2 rounded-xl text-[11px] font-black text-[var(--muted)] hover:text-[var(--ink)] flex items-center justify-center gap-1 transition-all">
-        <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-        <span class="text-emerald-700 font-extrabold">G마켓</span>
-        <span class="text-[8px] bg-emerald-100 text-emerald-800 px-1 py-0.2 rounded font-black">-25%</span>
+        class="flex-1 py-3 rounded-xl text-[15px] font-black text-[var(--muted)] hover:text-[var(--ink)] flex items-center justify-center gap-1.5 transition-all">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+        <span class="text-emerald-700 font-black">G마켓</span>
       </button>
       <button id="tabNaverBtn" onclick="switchMainTab('naver')"
-        class="flex-1 py-2 rounded-xl text-[11px] font-black text-[var(--muted)] hover:text-[var(--ink)] flex items-center justify-center gap-1 transition-all">
-        <span class="inline-block w-1.5 h-1.5 rounded-full bg-[#03C75A]"></span>
-        <span class="text-[#03C75A] font-extrabold">네이버</span>
-        <span class="text-[8px] bg-green-100 text-green-800 px-1 py-0.2 rounded font-black">13%</span>
+        class="flex-1 py-3 rounded-xl text-[15px] font-black text-[var(--muted)] hover:text-[var(--ink)] flex items-center justify-center gap-1.5 transition-all">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-[#03C75A]"></span>
+        <span class="text-[#03C75A] font-black">네이버</span>
       </button>
       <button id="tabTossBtn" onclick="switchMainTab('toss')"
-        class="flex-1 py-2 rounded-xl text-[11px] font-black text-[var(--muted)] hover:text-[var(--ink)] flex items-center justify-center gap-1 transition-all">
-        <i data-lucide="gift" class="w-3 h-3 text-blue-500"></i>
-        <span class="text-blue-600 font-extrabold">토스</span>
+        class="flex-1 py-3 rounded-xl text-[15px] font-black text-[var(--muted)] hover:text-[var(--ink)] flex items-center justify-center gap-1.5 transition-all">
+        <i data-lucide="gift" class="w-4 h-4 text-blue-500"></i>
+        <span class="text-blue-600 font-black">토스</span>
       </button>
     </div>
 
     <!-- Gmarket Section (Initially Hidden or Shown on Tab Click) -->
     <div id="gmarketSection" class="hidden">
+      <!-- Gmarket Superdeal Shortcut Banner -->
+      <a href="https://www.gmarket.co.kr/?spm=gmktpc.superdealhome.0.0.38517ecfMUd5M0" target="_blank" rel="noopener"
+        class="mt-3 flex items-center justify-between p-3.5 bg-emerald-50 rounded-2xl border border-emerald-200 text-emerald-900 shadow-sm hover:bg-emerald-100/70 transition">
+        <div class="flex items-center gap-2">
+          <span class="p-2 bg-emerald-600 text-white rounded-xl"><i data-lucide="sparkles" class="w-4 h-4"></i></span>
+          <div>
+            <div class="text-[13px] font-black">G마켓 슈퍼딜 홈 바로가기</div>
+            <div class="text-[11px] font-bold text-emerald-700">실시간 파격 특가 전체 모아보기</div>
+          </div>
+        </div>
+        <span class="text-[12px] font-black text-emerald-800 flex items-center gap-1">이동 <i data-lucide="chevron-right" class="w-4 h-4"></i></span>
+      </a>
+
       <!-- Gmarket Direct Search Bar -->
-      <section class="mt-4">
+      <section class="mt-3">
         <form onsubmit="handleGmarketSearch(event)" class="relative flex items-center">
           <i data-lucide="search" class="w-4 h-4 absolute left-3.5 text-emerald-600"></i>
           <input type="text" id="gmarketSearchInput" placeholder="G마켓 최저가 & 슈퍼딜 상품 직접 검색"
@@ -130,7 +141,7 @@
         <div class="flex flex-wrap items-center justify-between gap-2">
           <span
             class="inline-flex items-center gap-1 rounded-full bg-emerald-50 border border-emerald-200 px-2.5 py-1 text-[11px] font-extrabold text-emerald-700">
-            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-emerald-600"></i> G마켓 큐레이터 엄선 특가
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-emerald-600"></i> G마켓 엄선 슈퍼딜
           </span>
           <div class="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-200 px-3 py-1 text-[11px] font-extrabold text-emerald-700 shadow-sm">
             <i data-lucide="percent" class="w-3.5 h-3.5"></i> 최대 67% 단독 파격 할인
@@ -147,7 +158,7 @@
         <div class="mt-4 flex flex-wrap gap-2 text-[12px] font-bold text-[#42383E]">
           <span
             class="inline-flex items-center gap-1 rounded-full border border-emerald-200 bg-emerald-50/50 px-3 py-1">
-            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-600"></i> 공식 큐레이터 인증
+            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-600"></i> 슈퍼딜 정품 인증
           </span>
           <span
             class="inline-flex items-center gap-1 rounded-full border border-emerald-200 bg-emerald-50/50 px-3 py-1">
@@ -170,7 +181,7 @@
         <!-- GMARKET PRODUCT 1: (프리미엄) 형상100%암막 일반커튼 2장세트 -->
         <article
           class="overflow-hidden rounded-[26px] border border-emerald-200 bg-[var(--surface)] shadow-[0_16px_40px_rgba(0,185,111,0.08)]">
-          <a href="https://link.gmarket.co.kr/gate/curator/I0kmp7b" target="_blank" rel="noopener"
+          <a href="https://browse.gmarket.co.kr/search?keyword=%ED%98%95%EC%83%81100%25%EC%95%94%EB%A7%89+%EC%BB%A4%ED%8A%BC" target="_blank" rel="noopener"
             class="relative block overflow-hidden"
             style="background: linear-gradient(135deg,#D5F5E3 0%,#A3E4D7 48%,#F9E79F 100%)">
             <div class="relative flex min-h-[220px] items-center justify-between px-5 py-5">
@@ -202,7 +213,7 @@
           </a>
 
           <div class="p-5 pt-4">
-            <a href="https://link.gmarket.co.kr/gate/curator/I0kmp7b" target="_blank" rel="noopener" class="block">
+            <a href="https://browse.gmarket.co.kr/search?keyword=%ED%98%95%EC%83%81100%25%EC%95%94%EB%A7%89+%EC%BB%A4%ED%8A%BC" target="_blank" rel="noopener" class="block">
               <h2 class="text-[20px] font-black leading-[1.25] tracking-[-0.02em] text-[var(--ink)]">
                 (프리미엄) 형상100%암막 방한·방풍 커튼 2장세트
               </h2>
@@ -237,7 +248,7 @@
               정가 98,900원짜리 형상기억 100% 방한 암막커튼 2장 세트가 쿠폰 적용 시 31,930원! 차가운 겨울 외풍을 완벽 차단해 난방비를 획기적으로 줄여주는 방한 꿀템입니다.
             </p>
 
-            <a href="https://link.gmarket.co.kr/gate/curator/I0kmp7b" target="_blank" rel="noopener"
+            <a href="https://browse.gmarket.co.kr/search?keyword=%ED%98%95%EC%83%81100%25%EC%95%94%EB%A7%89+%EC%BB%A4%ED%8A%BC" target="_blank" rel="noopener"
               class="mt-4 flex h-[52px] items-center justify-center gap-2 rounded-2xl bg-emerald-600 text-[16px] font-black text-white shadow-[0_10px_22px_rgba(0,185,111,0.28)] transition hover:bg-emerald-700 active:scale-[0.98]">
               G마켓에서 보기 <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
             </a>
@@ -248,7 +259,7 @@
         <!-- GMARKET PRODUCT 2: 스파클생수 500ml 60병 -->
         <article
           class="overflow-hidden rounded-[26px] border border-emerald-200 bg-[var(--surface)] shadow-[0_16px_40px_rgba(0,185,111,0.08)]">
-          <a href="https://link.gmarket.co.kr/gate/curator/Rwkmp7b" target="_blank" rel="noopener"
+          <a href="https://browse.gmarket.co.kr/search?keyword=%EC%8A%A4%ED%8C%8C%ED%81%B4%EC%83%9D%EC%88%98+500ml+60%EB%B3%91" target="_blank" rel="noopener"
             class="relative block overflow-hidden"
             style="background: linear-gradient(135deg,#D6EAF8 0%,#AED6F1 48%,#E8F8F5 100%)">
             <div class="relative flex min-h-[220px] items-center justify-between px-5 py-5">
@@ -280,7 +291,7 @@
           </a>
 
           <div class="p-5 pt-4">
-            <a href="https://link.gmarket.co.kr/gate/curator/Rwkmp7b" target="_blank" rel="noopener" class="block">
+            <a href="https://browse.gmarket.co.kr/search?keyword=%EC%8A%A4%ED%8C%8C%ED%81%B4%EC%83%9D%EC%88%98+500ml+60%EB%B3%91" target="_blank" rel="noopener" class="block">
               <h2 class="text-[20px] font-black leading-[1.25] tracking-[-0.02em] text-[var(--ink)]">
                 스파클생수 500ml 60병 (무라벨/도착보장)
               </h2>
@@ -315,7 +326,7 @@
               마트나 편의점에서 1병에 800원~1,000원 하는 생수가 60병 기준 병당 180원 꼴! 무라벨이라 라벨 뗄 필요 없이 바로 분리배출 가능한 국민 생수입니다.
             </p>
 
-            <a href="https://link.gmarket.co.kr/gate/curator/Rwkmp7b" target="_blank" rel="noopener"
+            <a href="https://browse.gmarket.co.kr/search?keyword=%EC%8A%A4%ED%8C%8C%ED%81%B4%EC%83%9D%EC%88%98+500ml+60%EB%B3%91" target="_blank" rel="noopener"
               class="mt-4 flex h-[52px] items-center justify-center gap-2 rounded-2xl bg-blue-600 text-[16px] font-black text-white shadow-[0_10px_22px_rgba(41,128,185,0.28)] transition hover:bg-blue-700 active:scale-[0.98]">
               G마켓에서 보기 <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
             </a>
@@ -326,7 +337,7 @@
         <!-- GMARKET PRODUCT 3: 바세린 바디로션 1000ml 2개 대용량 -->
         <article
           class="overflow-hidden rounded-[26px] border border-emerald-200 bg-[var(--surface)] shadow-[0_16px_40px_rgba(0,185,111,0.08)]">
-          <a href="https://link.gmarket.co.kr/gate/curator/A0kmp7b" target="_blank" rel="noopener"
+          <a href="https://browse.gmarket.co.kr/search?keyword=%EB%B0%94%EC%84%B8%EB%A6%B0+%EB%B0%94%EB%94%94%EB%A1%9C%EC%85%98+1000ml+2%EA%B0%9C" target="_blank" rel="noopener"
             class="relative block overflow-hidden"
             style="background: linear-gradient(135deg,#FCF3CF 0%,#F9E79F 48%,#FADBD8 100%)">
             <div class="relative flex min-h-[220px] items-center justify-between px-5 py-5">
@@ -358,7 +369,7 @@
           </a>
 
           <div class="p-5 pt-4">
-            <a href="https://link.gmarket.co.kr/gate/curator/A0kmp7b" target="_blank" rel="noopener" class="block">
+            <a href="https://browse.gmarket.co.kr/search?keyword=%EB%B0%94%EC%84%B8%EB%A6%B0+%EB%B0%94%EB%94%94%EB%A1%9C%EC%85%98+1000ml+2%EA%B0%9C" target="_blank" rel="noopener" class="block">
               <h2 class="text-[20px] font-black leading-[1.25] tracking-[-0.02em] text-[var(--ink)]">
                 바세린 바디로션 1000ml 2개 대용량 (총 2000ml)
               </h2>
@@ -393,7 +404,7 @@
               건조한 겨울철 온 가족이 매일 듬뿍 발라도 올겨울 끄떡없는 1000ml x 2개(총 2L) 구성! 끈적임 없이 촉촉한 3중 보습으로 피부 당김을 즉각 해결해 줍니다.
             </p>
 
-            <a href="https://link.gmarket.co.kr/gate/curator/A0kmp7b" target="_blank" rel="noopener"
+            <a href="https://browse.gmarket.co.kr/search?keyword=%EB%B0%94%EC%84%B8%EB%A6%B0+%EB%B0%94%EB%94%94%EB%A1%9C%EC%85%98+1000ml+2%EA%B0%9C" target="_blank" rel="noopener"
               class="mt-4 flex h-[52px] items-center justify-center gap-2 rounded-2xl bg-amber-600 text-[16px] font-black text-white shadow-[0_10px_22px_rgba(214,137,16,0.28)] transition hover:bg-amber-700 active:scale-[0.98]">
               G마켓에서 보기 <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
             </a>
@@ -425,7 +436,7 @@
         <div class="flex flex-wrap items-center justify-between gap-2">
           <span
             class="inline-flex items-center gap-1 rounded-full bg-green-50 border border-green-200 px-2.5 py-1 text-[11px] font-extrabold text-[#03C75A]">
-            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-[#03C75A]"></i> 네이버 공식 브랜드커넥트 13%
+            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-[#03C75A]"></i> 네이버 공식 브랜드스토어
           </span>
           <div class="inline-flex items-center gap-1.5 rounded-full bg-green-50 border border-green-200 px-3 py-1 text-[11px] font-extrabold text-[#03C75A] shadow-sm">
             <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> N포인트 최대 5,000P 즉시적립
@@ -436,15 +447,15 @@
           네이버 브랜드 <span class="text-[#03C75A]">3 PICK</span>
         </h1>
         <p class="mt-1 text-[13px] font-bold text-[var(--muted)]">
-          네이버 브랜드커넥트 정식 승인 완료! 최대 51% 파격 혜택 프리미엄 뷰티·케어 엄선.
+          네이버 공식 브랜드스토어 정품 보증! 최대 63% 파격 혜택 프리미엄 뷰티·케어 엄선.
         </p>
 
         <div class="mt-4 flex flex-wrap gap-2 text-[12px] font-bold text-[#42383E]">
           <span class="inline-flex items-center gap-1 rounded-full border border-green-200 bg-green-50/50 px-3 py-1">
-            <i data-lucide="badge-check" class="w-3.5 h-3.5 text-[#03C75A]"></i> 본사 공식 인증
+            <i data-lucide="badge-check" class="w-3.5 h-3.5 text-[#03C75A]"></i> 본사 공식 정품
           </span>
           <span class="inline-flex items-center gap-1 rounded-full border border-green-200 bg-green-50/50 px-3 py-1">
-            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-emerald-600"></i> 수수료 최대 51% 고마진
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-emerald-600"></i> 선착순 단독 파격가
           </span>
           <span class="inline-flex items-center gap-1 rounded-full border border-green-200 bg-green-50/50 px-3 py-1">
             <i data-lucide="credit-card" class="w-3.5 h-3.5 text-blue-600"></i> N페이 추가 적립
@@ -452,12 +463,12 @@
         </div>
       </section>
 
-      <!-- Naver 3 Pick Product Cards (11/26 Fresh Approved High Commission Items) -->
+      <!-- Naver 3 Pick Product Cards -->
       <div class="mt-5 space-y-4">
 
-        <!-- NAVER PRODUCT 1: [수수료 51%] 잇퓨 레티노니 크림 30ml 3개 -->
+        <!-- NAVER PRODUCT 1: 잇퓨 레티노니 크림 30ml 3개 -->
         <article class="overflow-hidden rounded-[26px] border border-green-200 bg-[var(--surface)] shadow-[0_16px_40px_rgba(3,199,90,0.08)]">
-          <a href="https://brandconnect.naver.com/994514402032320/affiliate/products" target="_blank" rel="noopener" class="relative block overflow-hidden"
+          <a href="https://search.shopping.naver.com/search/all?query=%EC%9E%87%ED%93%A8+%EB%A0%88%ED%8B%B0%EB%85%B8%EB%8B%88+%ED%81%AC%EB%A6%BC" target="_blank" rel="noopener" class="relative block overflow-hidden"
             style="background: linear-gradient(135deg,#E8F8F5 0%,#D1F2EB 48%,#FCF3CF 100%)">
             <div class="relative flex min-h-[220px] items-center justify-between px-5 py-5">
               <div class="min-w-0">
@@ -481,7 +492,7 @@
           </a>
 
           <div class="p-5 pt-4">
-            <a href="https://brandconnect.naver.com/994514402032320/affiliate/products" target="_blank" rel="noopener" class="block">
+            <a href="https://search.shopping.naver.com/search/all?query=%EC%9E%87%ED%93%A8+%EB%A0%88%ED%8B%B0%EB%85%B8%EB%8B%88+%ED%81%AC%EB%A6%BC" target="_blank" rel="noopener" class="block">
               <h2 class="text-[20px] font-black leading-[1.25] tracking-[-0.02em] text-[var(--ink)]">
                 [잇퓨] 레티노니 비타민A 레티날 리프팅 에이징 크림 30ml x 3개
               </h2>
@@ -494,7 +505,7 @@
               <span class="rounded-full bg-green-50 px-2.5 py-1 text-[12px] font-bold text-green-800 border border-green-200">63% 단독특가</span>
               <span class="rounded-full bg-green-50 px-2.5 py-1 text-[12px] font-bold text-green-800 border border-green-200">주름·탄력 3중 리프팅</span>
             </div>
-            <a href="https://brandconnect.naver.com/994514402032320/affiliate/products" target="_blank" rel="noopener"
+            <a href="https://search.shopping.naver.com/search/all?query=%EC%9E%87%ED%93%A8+%EB%A0%88%ED%8B%B0%EB%85%B8%EB%8B%88+%ED%81%AC%EB%A6%BC" target="_blank" rel="noopener"
               class="mt-4 flex h-[52px] items-center justify-center gap-2 rounded-2xl bg-[#03C75A] text-[16px] font-black text-white shadow-[0_10px_22px_rgba(3,199,90,0.28)] transition hover:bg-[#02b351] active:scale-[0.98]">
               네이버 공식스토어에서 보기 <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
             </a>
@@ -502,9 +513,9 @@
           </div>
         </article>
 
-        <!-- NAVER PRODUCT 2: [수수료 36%] 뷰티영 코노피 LED EMS 복코 마사지기 -->
+        <!-- NAVER PRODUCT 2: 뷰티영 코노피 LED EMS 복코 마사지기 -->
         <article class="overflow-hidden rounded-[26px] border border-green-200 bg-[var(--surface)] shadow-[0_16px_40px_rgba(3,199,90,0.08)]">
-          <a href="https://brandconnect.naver.com/994514402032320/affiliate/products" target="_blank" rel="noopener" class="relative block overflow-hidden"
+          <a href="https://search.shopping.naver.com/search/all?query=%EB%B7%B0%ED%8B%B0%EC%98%81+%EC%BD%94%EB%85%B8%ED%94%BC+EMS+%EB%A7%88%EC%82%AC%EC%8B%80%EA%B8%B0" target="_blank" rel="noopener" class="relative block overflow-hidden"
             style="background: linear-gradient(135deg,#FCF3CF 0%,#F9E79F 48%,#EDBB99 100%)">
             <div class="relative flex min-h-[220px] items-center justify-between px-5 py-5">
               <div class="min-w-0">
@@ -528,7 +539,7 @@
           </a>
 
           <div class="p-5 pt-4">
-            <a href="https://brandconnect.naver.com/994514402032320/affiliate/products" target="_blank" rel="noopener" class="block">
+            <a href="https://search.shopping.naver.com/search/all?query=%EB%B7%B0%ED%8B%B0%EC%98%81+%EC%BD%94%EB%85%B8%ED%94%BC+EMS+%EB%A7%88%EC%82%AC%EC%8B%80%EA%B8%B0" target="_blank" rel="noopener" class="block">
               <h2 class="text-[20px] font-black leading-[1.25] tracking-[-0.02em] text-[var(--ink)]">
                 [뷰티영] 코노피 LED EMS 복코 콧볼 축소 마사지기 900샷
               </h2>
@@ -541,7 +552,7 @@
               <span class="rounded-full bg-amber-50 px-2.5 py-1 text-[12px] font-bold text-amber-900 border border-amber-200">뷰티 인플루언서 대란템</span>
               <span class="rounded-full bg-amber-50 px-2.5 py-1 text-[12px] font-bold text-amber-900 border border-amber-200">콧대 리프팅 케어</span>
             </div>
-            <a href="https://brandconnect.naver.com/994514402032320/affiliate/products" target="_blank" rel="noopener"
+            <a href="https://search.shopping.naver.com/search/all?query=%EB%B7%B0%ED%8B%B0%EC%98%81+%EC%BD%94%EB%85%B8%ED%94%BC+EMS+%EB%A7%88%EC%82%AC%EC%8B%80%EA%B8%B0" target="_blank" rel="noopener"
               class="mt-4 flex h-[52px] items-center justify-center gap-2 rounded-2xl bg-amber-700 text-[16px] font-black text-white shadow-[0_10px_22px_rgba(180,83,9,0.28)] transition hover:bg-amber-800 active:scale-[0.98]">
               네이버 공식스토어에서 보기 <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
             </a>
@@ -598,6 +609,19 @@
 
     <!-- Toss Section (Initially Hidden) -->
     <div id="tossSection" class="hidden">
+      <!-- Toss App Guide Banner -->
+      <div class="mt-3 p-4 bg-blue-50 rounded-2xl border border-blue-200 text-blue-900 shadow-sm">
+        <div class="flex items-start gap-3">
+          <span class="p-2.5 bg-blue-600 text-white rounded-xl shrink-0"><i data-lucide="gift" class="w-5 h-5"></i></span>
+          <div>
+            <div class="text-[14px] font-black">토스 쇼핑 공동구매 안내</div>
+            <div class="text-[12px] font-medium text-blue-800 mt-0.5 leading-relaxed">
+              토스 공동구매 특가는 <strong>토스 앱 ➔ [토스페이] ➔ [쇼핑]</strong> 메뉴에서 실시간 파격가로 참여하실 수 있습니다. 아래 버튼을 누르면 토스로 연결됩니다.
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Toss Hero Title Section -->
       <section
         class="mt-4 rounded-[28px] border border-blue-200 bg-[var(--surface)] p-5 shadow-[0_12px_36px_rgba(0,100,255,0.08)]">
@@ -644,10 +668,10 @@
               <span class="text-sm line-through text-[var(--muted)]">34,000원</span>
             </div>
             <p class="mt-2 text-xs text-[var(--muted)]">1kg당 9,900원 꼴! 토스 앱 열고 간편결제로 바로 구매 가능합니다.</p>
-            <a href="https://toss.im/_m/uN9W84a" target="_blank" rel="noopener"
-              class="mt-4 flex h-[50px] items-center justify-center gap-2 rounded-2xl bg-blue-600 text-white font-black hover:bg-blue-700 transition">
-              토스 공동구매로 보기 <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-            </a>
+            <button onclick="openTossShopping('파파네 통삼겹살')"
+              class="mt-4 flex w-full h-[50px] items-center justify-center gap-2 rounded-2xl bg-blue-600 text-white font-black hover:bg-blue-700 transition">
+              토스 쇼핑에서 보기 <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </button>
           </div>
         </article>
 
@@ -664,16 +688,30 @@
               <span class="text-sm line-through text-[var(--muted)]">15,000원</span>
             </div>
             <p class="mt-2 text-xs text-[var(--muted)]">겨울철 건조한 입술/손/발 완벽 보습 끝판왕 세트.</p>
-            <a href="https://toss.im/_m/uN9W84a" target="_blank" rel="noopener"
-              class="mt-4 flex h-[50px] items-center justify-center gap-2 rounded-2xl bg-blue-600 text-white font-black hover:bg-blue-700 transition">
-              토스 공동구매로 보기 <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-            </a>
+            <button onclick="openTossShopping('바세린 오리지널')"
+              class="mt-4 flex w-full h-[50px] items-center justify-center gap-2 rounded-2xl bg-blue-600 text-white font-black hover:bg-blue-700 transition">
+              토스 쇼핑에서 보기 <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </button>
           </div>
         </article>
 
       </div>
     </div>
-      <form onsubmit="handleCoupangSearch(event)" class="relative flex items-center">
+
+    <!-- Coupang Section (Default Active) -->
+    <div id="coupangSection">
+      <!-- Coupang Direct Search Bar -->
+      <section class="mt-4">
+        <form onsubmit="handleCoupangSearch(event)" class="relative flex items-center">
+          <i data-lucide="search" class="w-4 h-4 absolute left-3.5 text-[var(--muted)]"></i>
+          <input type="text" id="coupangSearchInput" placeholder="쿠팡 최저가 & 로켓배송 상품 직접 검색"
+            class="w-full bg-white border border-[var(--line)] rounded-2xl py-2.5 pl-10 pr-24 text-[13px] font-medium text-[var(--ink)] placeholder-[var(--muted)] focus:outline-none focus:border-[var(--pink)] focus:ring-1 focus:ring-[var(--pink)] transition-all shadow-sm" />
+          <button type="submit"
+            class="absolute right-1.5 px-3 py-1.5 rounded-xl bg-[var(--pink)] text-white text-[11px] font-black hover:opacity-95 active:scale-95 transition-all shadow-sm">
+            쿠팡 검색
+          </button>
+        </form>
+      </section>
         <i data-lucide="search" class="w-4 h-4 absolute left-3.5 text-[var(--muted)]"></i>
         <input type="text" id="coupangSearchInput" placeholder="쿠팡 최저가 & 로켓배송 상품 직접 검색"
           class="w-full bg-white border border-[var(--line)] rounded-2xl py-2.5 pl-10 pr-24 text-[13px] font-medium text-[var(--ink)] placeholder-[var(--muted)] focus:outline-none focus:border-[var(--pink)] focus:ring-1 focus:ring-[var(--pink)] transition-all shadow-sm" />
@@ -1043,6 +1081,7 @@
         </li>
       </ol>
     </section>
+    </div> <!-- end coupangSection -->
 
     <!-- Footer & Legal Disclaimer -->
     <footer class="mt-10 text-center text-[11px] text-[var(--muted)] pb-8 border-t border-[var(--line)] pt-5">
@@ -1111,8 +1150,8 @@
       if (naverSec) naverSec.classList.add('hidden');
       if (tossSec) tossSec.classList.add('hidden');
 
-      // Reset button styles
-      const defaultBtnClass = "flex-1 py-2 rounded-xl text-[11px] font-black text-[var(--muted)] hover:text-[var(--ink)] flex items-center justify-center gap-1 transition-all";
+      // Reset button styles (larger font 15px)
+      const defaultBtnClass = "flex-1 py-3 rounded-xl text-[15px] font-black text-[var(--muted)] hover:text-[var(--ink)] flex items-center justify-center gap-1.5 transition-all";
       if (coupangBtn) coupangBtn.className = defaultBtnClass;
       if (gmarketBtn) gmarketBtn.className = defaultBtnClass;
       if (naverBtn) naverBtn.className = defaultBtnClass;
@@ -1121,16 +1160,16 @@
       // Activate selected
       if (platform === 'coupang') {
         if (coupangSec) coupangSec.classList.remove('hidden');
-        if (coupangBtn) coupangBtn.className = "flex-1 py-2 rounded-xl text-[11px] font-black text-white bg-[var(--pink)] shadow-sm flex items-center justify-center gap-1 transition-all";
+        if (coupangBtn) coupangBtn.className = "flex-1 py-3 rounded-xl text-[15px] font-black text-white bg-[var(--pink)] shadow-sm flex items-center justify-center gap-1.5 transition-all";
       } else if (platform === 'gmarket') {
         if (gmarketSec) gmarketSec.classList.remove('hidden');
-        if (gmarketBtn) gmarketBtn.className = "flex-1 py-2 rounded-xl text-[11px] font-black text-white bg-emerald-600 shadow-sm flex items-center justify-center gap-1 transition-all";
+        if (gmarketBtn) gmarketBtn.className = "flex-1 py-3 rounded-xl text-[15px] font-black text-white bg-emerald-600 shadow-sm flex items-center justify-center gap-1.5 transition-all";
       } else if (platform === 'naver') {
         if (naverSec) naverSec.classList.remove('hidden');
-        if (naverBtn) naverBtn.className = "flex-1 py-2 rounded-xl text-[11px] font-black text-white bg-[#03C75A] shadow-sm flex items-center justify-center gap-1 transition-all";
+        if (naverBtn) naverBtn.className = "flex-1 py-3 rounded-xl text-[15px] font-black text-white bg-[#03C75A] shadow-sm flex items-center justify-center gap-1.5 transition-all";
       } else if (platform === 'toss') {
         if (tossSec) tossSec.classList.remove('hidden');
-        if (tossBtn) tossBtn.className = "flex-1 py-2 rounded-xl text-[11px] font-black text-white bg-blue-600 shadow-sm flex items-center justify-center gap-1 transition-all";
+        if (tossBtn) tossBtn.className = "flex-1 py-3 rounded-xl text-[15px] font-black text-white bg-blue-600 shadow-sm flex items-center justify-center gap-1.5 transition-all";
       }
 
       lucide.createIcons();
@@ -1139,8 +1178,24 @@
     function handleGmarketSearch(e) {
       e.preventDefault();
       const query = document.getElementById('gmarketSearchInput').value.trim();
-      if (!query) return;
-      window.open(`https://mycurator.gmarket.co.kr/#!/offer/product_offer`, '_blank');
+      if (!query) {
+        window.open('https://www.gmarket.co.kr/?spm=gmktpc.superdealhome.0.0.38517ecfMUd5M0', '_blank');
+        return;
+      }
+      window.open(`https://browse.gmarket.co.kr/search?keyword=${encodeURIComponent(query)}`, '_blank');
+    }
+
+    function openTossShopping(keyword) {
+      // 모바일인 경우 토스 앱 딥링크 시도, PC이거나 앱 미설치 시 토스 웹 오픈 (404 원천 차단)
+      const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      if (isMobile) {
+        window.location.href = 'supertoss://pay/shopping';
+        setTimeout(() => {
+          window.open('https://toss.im', '_blank');
+        }, 1200);
+      } else {
+        window.open('https://toss.im', '_blank');
+      }
     }
 
     function handleNaverSearch(e) {
