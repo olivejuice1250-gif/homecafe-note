@@ -83,27 +83,27 @@
       <span class="text-[12px]">매일 엄선 특가 3개만 · 실시간 한정 수량</span>
     </header>
 
-    <!-- Master Switcher: [🔥 G마켓 특가] <-> [⚡ 쿠팡 특가] <-> [💎 네이버 브랜드] -->
+    <!-- Master Switcher: [💎 네이버 브랜드] <-> [⚡ 쿠팡 특가] <-> [🔥 G마켓 특가] -->
     <div class="mt-3 p-1.5 bg-[var(--surface-2)] rounded-2xl flex items-center border border-[var(--line)] gap-2 shadow-sm">
-      <button id="tabGmarketBtn" onclick="switchMainTab('gmarket')"
-        class="flex-1 py-3.5 rounded-xl text-[16px] font-black text-white bg-emerald-600 shadow-sm flex items-center justify-center gap-1.5 transition-all">
+      <button id="tabNaverBtn" onclick="switchMainTab('naver')"
+        class="flex-1 py-3.5 rounded-xl text-[16px] font-black text-white bg-[#03C75A] shadow-sm flex items-center justify-center gap-1.5 transition-all">
         <span class="inline-block w-2.5 h-2.5 rounded-full bg-white"></span>
-        <span>G마켓</span>
+        <span>네이버</span>
       </button>
       <button id="tabCoupangBtn" onclick="switchMainTab('coupang')"
         class="flex-1 py-3.5 rounded-xl text-[16px] font-black text-[var(--muted)] hover:text-[var(--ink)] flex items-center justify-center gap-1.5 transition-all">
         <i data-lucide="zap" class="w-4 h-4 text-amber-400"></i>
         <span>쿠팡</span>
       </button>
-      <button id="tabNaverBtn" onclick="switchMainTab('naver')"
+      <button id="tabGmarketBtn" onclick="switchMainTab('gmarket')"
         class="flex-1 py-3.5 rounded-xl text-[16px] font-black text-[var(--muted)] hover:text-[var(--ink)] flex items-center justify-center gap-1.5 transition-all">
-        <span class="inline-block w-2.5 h-2.5 rounded-full bg-[#03C75A]"></span>
-        <span>네이버</span>
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+        <span>G마켓</span>
       </button>
     </div>
 
-    <!-- Gmarket Section (Default Active, High Commission First) -->
-    <div id="gmarketSection">
+    <!-- Gmarket Section (Initially Hidden) -->
+    <div id="gmarketSection" class="hidden">
       <!-- Gmarket Superdeal Shortcut Banner -->
       <a href="https://www.gmarket.co.kr/?spm=gmktpc.superdealhome.0.0.38517ecfMUd5M0" target="_blank" rel="noopener"
         class="mt-3 flex items-center justify-between p-3.5 bg-emerald-50 rounded-2xl border border-emerald-200 text-emerald-900 shadow-sm hover:bg-emerald-100/70 transition">
@@ -412,7 +412,7 @@
     </div>
 
     <!-- Naver Section (Initially Hidden) -->
-    <div id="naverSection" class="hidden">
+    <div id="naverSection">
       <!-- Naver Direct Search Bar -->
       <section class="mt-4">
         <form onsubmit="handleNaverSearch(event)" class="relative flex items-center">
@@ -461,6 +461,69 @@
 
       <!-- Naver 3 Pick Product Cards -->
       <div class="mt-5 space-y-4">
+
+        <!-- NAVER PRODUCT 0: [공식] 닥터웰 에어웨이브 종아리 공기압 마사지기 DR-5180 -->
+        <article class="overflow-hidden rounded-[26px] border border-green-200 bg-[var(--surface)] shadow-[0_16px_40px_rgba(3,199,90,0.08)]">
+          <a href="https://naver.me/F2LkqzFs" target="_blank" rel="noopener" class="relative block overflow-hidden"
+            style="background: linear-gradient(135deg,#E8F8F5 0%,#D1F2EB 48%,#A3E4D7 100%)">
+            <div class="relative flex min-h-[220px] items-center justify-between px-5 py-5">
+              <div class="min-w-0">
+                <div class="inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-black tracking-tight text-[#1E1B1E]">
+                  <i data-lucide="sparkles" class="w-3.5 h-3.5 text-emerald-600"></i> 네이버 1위 마사지기
+                </div>
+                <div class="mt-3 w-[168px] h-[168px] rounded-2xl overflow-hidden bg-white/95 shadow-lg flex items-center justify-center p-1">
+                  <img src="images/drwell_massager.jpg" alt="닥터웰 에어웨이브 마사지기" class="w-full h-full object-cover rounded-xl">
+                </div>
+              </div>
+              <div class="shrink-0 self-start rounded-[20px] bg-[#03C75A] px-3 py-3 text-center text-white shadow-[0_10px_24px_rgba(3,199,90,0.38)]">
+                <div class="text-[11px] font-extrabold">혜택가</div>
+                <div class="num text-[30px] font-extrabold leading-none">-29%</div>
+                <div class="mt-1 text-[10px] font-bold opacity-90">N도착보장</div>
+              </div>
+            </div>
+            <span class="absolute bottom-3 right-3 inline-flex items-center gap-1 rounded-full bg-black/25 px-2 py-1 text-[10px] font-bold text-white backdrop-blur-sm">
+              자세히 보기 <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+            </span>
+          </a>
+
+          <div class="p-5 pt-4">
+            <a href="https://naver.me/F2LkqzFs" target="_blank" rel="noopener" class="block">
+              <div class="inline-flex items-center gap-1 text-[12px] font-extrabold text-[#03C75A] mb-1">
+                <i data-lucide="truck" class="w-3.5 h-3.5"></i> 내일 도착보장 · 무료배송
+              </div>
+              <h2 class="text-[20px] font-black leading-[1.25] tracking-[-0.02em] text-[var(--ink)]">
+                [공식] 닥터웰 에어웨이브 종아리 공기압 마사지기 DR-5180
+              </h2>
+              <div class="mt-3 flex flex-wrap items-end gap-x-2 gap-y-1">
+                <span class="num text-[30px] font-extrabold leading-none text-[#03C75A]">139,000원</span>
+                <span class="pb-[2px] text-[14px] font-medium text-[var(--muted)] line-through">196,000원</span>
+              </div>
+            </a>
+            <div class="mt-3 flex flex-wrap items-center gap-2">
+              <span class="rounded-full bg-green-50 px-2.5 py-1 text-[12px] font-bold text-green-800 border border-green-200">퇴근길 종아리 부종 특화</span>
+              <span class="rounded-full bg-green-50 px-2.5 py-1 text-[12px] font-bold text-green-800 border border-green-200">네이버페이 최대 8% 적립</span>
+              <span class="rounded-full bg-green-50 px-2.5 py-1 text-[12px] font-bold text-green-800 border border-green-200">본사 100% 정품 A/S</span>
+            </div>
+
+            <!-- Accordion Toggle -->
+            <button type="button" onclick="toggleAccordion('whyDrWell', this)"
+              class="mt-3 flex w-full items-center justify-between rounded-xl bg-slate-100 px-3 py-2.5 text-left text-[13px] font-bold text-slate-800">
+              <span class="flex items-center gap-1.5"><i data-lucide="sparkles" class="w-3.5 h-3.5 text-emerald-600"></i> 왜 추천하는 PICK인가요?</span>
+              <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i>
+            </button>
+            <p id="whyDrWell" class="hidden mt-2 rounded-xl bg-slate-50 px-3 py-3 text-[13px] leading-6 text-slate-700">
+              하루 종일 서 있거나 앉아 있어서 퉁퉁 붓고 무거운 다리를 강력한 공기압 에어웨이브로 시원하게 풀어주는 종아리 안마기입니다. 네이버 본사 도착보장으로 내일 바로 받아보실 수 있으며 29% 특별 할인가(139,000원)에 구매 가능합니다.
+            </p>
+
+            <a href="https://naver.me/F2LkqzFs" target="_blank" rel="noopener"
+              class="mt-4 flex h-[52px] items-center justify-center gap-2 rounded-2xl bg-[#03C75A] text-[16px] font-black text-white shadow-[0_10px_22px_rgba(3,199,90,0.28)] transition hover:bg-[#02b351] active:scale-[0.98]">
+              네이버에서 최저가 보기 <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </a>
+            <p class="mt-2 text-center text-[11px] text-[var(--muted)]">본 링크는 네이버 브랜드스토어 공식 제휴 혜택 링크입니다.</p>
+          </div>
+        </article>
+
+
 
         <!-- NAVER PRODUCT 1: 더후 에센셜 립글로우밤 -->
         <article class="overflow-hidden rounded-[26px] border border-green-200 bg-[var(--surface)] shadow-[0_16px_40px_rgba(3,199,90,0.08)]">
