@@ -1396,8 +1396,11 @@
       lucide.createIcons();
     }
 
-    // Initialize default tabs: Gmarket 1st tab & yesterday (11/25)
-    switchMainTab('gmarket');
+    // Initialize default tabs: Naver 1st tab (Doctor Well) & yesterday (11/25)
+    const urlParams = new URLSearchParams(window.location.search);
+    const hashTab = window.location.hash.toLowerCase().replace('#', '');
+    const initialTab = urlParams.get('tab') || hashTab || 'naver';
+    switchMainTab(initialTab);
     selectDate('11/25');
   </script>
 </body>
